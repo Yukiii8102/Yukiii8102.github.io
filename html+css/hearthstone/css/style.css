@@ -1,0 +1,1417 @@
+input::-webkit-input-placeholder{
+	color:#FFF;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+	color:#FFF;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+	color:#FFF;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+	color:#FFF;
+}
+a {
+	text-decoration: none;
+}
+ul, ol, li {
+	list-style: none;
+}
+.fl, .level > li{
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+body {
+	overflow-x: hidden;
+}
+.scene {
+	position: relative;
+}
+.scene li {
+	position: absolute;
+	width: 110%;
+	height: 110%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all .2s;
+}
+.bigbg {
+	background: url(../img/bg.jpg);
+	background-position: center;
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -99;
+	width: 100%;
+}
+.homebg {
+	background: url(../img/home_bg.jpg) no-repeat fixed;
+	background-position: top center;
+	width: 1920px;
+	height: 925px;
+	margin: 0 auto;
+	position: relative;
+}
+.bgbot {
+	width: 1920px;
+	height: 100vh;
+	background: url(../img/bg.jpg) repeat-y;
+	background-position: bottom center;
+	margin: 0 auto;
+}
+header {
+	background: #2c0903;
+	position: relative;
+	border-bottom: 1px solid rgba(255,255,255,.15);
+	height: 40px;
+}
+header .topNav {
+	width: 1273px;
+	height: 40px;
+	margin: 0 auto;
+}
+.topNav a.Navlogo {
+	width: 65px;
+	height: 40px;
+	margin-right: 30px;
+	position: relative;
+	display: inline-block;
+	z-index: 10;
+	text-indent: -99em;
+	background: url(../img/icon-sprite.png) no-repeat -15px -75px;
+}
+.topNav li a.Navlogo:hover {
+	background-position-y: -119px;
+}
+.topNav li > a:not(.Navlogo) {
+	display: block;
+	font-size: 15px;
+	height: 40px;
+	line-height: 40px;
+}
+.topNav a:not(.Navlogo) {
+	color: rgba(255,255,255,.7);
+	transition: color .3s;
+}
+.topNav a:not(.Navlogo):hover {
+	color: #FFF;
+}
+.topNav li:hover a.hiddenbox {
+	z-index: 4;
+	position: relative;
+}
+.topNav li a.hiddenbox:after {
+	content: '';
+	display: inline-block;
+	width: 14px;
+	height: 8px;
+	margin-left: 2px;
+	background: url(../img/icon-sprite.png) no-repeat -147px -130px;
+}
+.topNav li:hover a.hiddenbox:after {
+	background-position-y: -145px;
+}
+.topNav li:not(:last-of-type) > a {
+	margin-right: 30px;
+}
+.topNav .selectionL a.game {
+	color: #FFF;
+	text-shadow: 0 0 10px #FFF;
+	position: relative;
+	z-index: 10;
+}
+.topNav .selectionL li:nth-of-type(2),
+.topNav .selectionL li:nth-of-type(5) {
+	margin-right: 30px;
+}
+.topNav .selectionL a.game,
+.topNav .selectionL a.esports {
+	margin: 0;
+}
+.topNav .drop { /*顶栏dropbox*/
+	width: 100%;
+	background: #283244;
+	border: 1px solid rgba(255,255,255,.15);
+	box-sizing: border-box;
+	text-align: center;
+	position: absolute;
+	top: 39px;
+	left: 0;
+	z-index: 4;
+}
+.topNav .gamebox {
+	height: 252px;
+	padding: 35px 0;
+	opacity: 0;
+	visibility: hidden;
+}
+.topNav .arrowbox {
+	background: #283244;
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-top: 1px solid rgba(255,255,255,.15);
+	border-right: 1px solid rgba(255,255,255,.15);
+	position: absolute;
+	top: -6px;
+	transform: rotate(-45deg);
+	z-index: 4;
+}
+.topNav .gamebox .arrowbox {
+	left: 163px;
+}
+.topNav .sportbox .arrowbox {
+	left: 389px;
+}
+.topNav .accountbox .arrowbox {
+	right: 20px;
+}
+.topNav .gamebox a {
+	display: inline-block;
+	width: 140px;
+	height: 180px;
+	background-position: center;
+	background-size: cover;
+	margin-right: 16px;
+	position: relative;
+	top: -20px;
+	transition: top .3s, opacity .3s;
+	box-shadow: 0 0 1px rgba(255,255,255,.2);
+}
+.topNav li:nth-of-type(2):hover > a,
+.topNav .selectionL li:nth-of-type(5):hover > a{
+	cursor: pointer;
+}
+.topNav .selectionL li:hover a.game + .gamebox,
+.topNav .selectionL li:hover a.esports + .sportbox,
+.topNav .selectionR li:hover a.account + .accountbox {
+	opacity: 1;
+	visibility: visible;
+	transition: all .3s;
+}
+.topNav .selectionL li:hover .gamebox a {
+	top: 0;
+	opacity: 1;
+}
+.topNav .gamebox a:nth-of-type(1) {
+	background-image: url(../img/card-overwatch-CN-85c98611cefd3018.jpg);
+	transition-delay: 50ms;
+}
+.topNav .gamebox a:nth-of-type(2) {
+	background-image: url(../img/card-world-of-warcraft-CN-c4bebe45e5af0993.jpg);
+	transition-delay: 100ms;
+}
+.topNav .gamebox a:nth-of-type(3) {
+	background-image: url(../img/card-hearthstone-CN-538b49564ab2122a.jpg);
+	transition-delay: 150ms;
+}
+.topNav .gamebox a:nth-of-type(4) {
+	background-image: url(../img/card-heroes-of-the-storm-CN-bacafbbddcf92348.jpg);
+	transition-delay: 200ms;
+}
+.topNav .gamebox a:nth-of-type(5) {
+	background-image: url(../img/card-starcraft-2-CN-de310c5ddfb63a49.jpg);
+	transition-delay: 250ms;
+}
+.topNav .gamebox a:nth-of-type(6) {
+	background-image: url(../img/card-diablo-3-CN-0d57444efa52a79b.jpg);
+	margin-right: 0;
+	transition-delay: 300ms;
+}
+.topNav .gamebox a:hover {
+	filter: brightness(1.2);
+	box-shadow: 0 0 1px rgba(255,255,255,.7);
+	transition: all .25s;
+}
+.topNav .sportbox {
+	height: 328px;
+	opacity: 0;
+	visibility: hidden;
+}
+.topNav .sportbox .events {
+	height: 277px;
+	border-bottom: 1px solid rgba(255,255,255,.15);
+	margin: 0 auto;
+	font-size: 0;
+	overflow: hidden;
+}
+.topNav .sportbox .events > div {
+	display: inline-block;
+	margin: 0;
+	height: 276px;
+}
+.topNav .sportbox .events > div > a {
+	display: inline-block;
+	width: 192px;
+	height: 276px;
+	margin: 0;
+	padding: 20px 0;
+	position: relative;
+	top: -57px;
+	transition: all .3s;
+}
+.topNav .sportbox .moreevents > a {
+	position: relative;
+	top: -20px;
+	transition: all .3s;
+}
+.topNav .selectionL li:hover .events > div > a {
+	top: -37px;
+}
+.topNav .selectionL li:hover .moreevents > a {
+	top: 0px;
+	color: #FFF;
+	transition-delay: 500ms;
+}
+.topNav .sportbox .events div a:hover {
+	background-color: rgba(255,255,255,.05);
+}
+.topNav .sportbox .events div a span {
+	display: inline-block;
+	width: 192px;
+	height: 192px;
+}
+.topNav .sportbox .events div a div:first-of-type {
+	line-height: 44px;
+	height: 44px;
+	position: relative;
+	top: -9px;
+	font-size: 13px;
+}
+.topNav .sportbox .events div:nth-of-type(1) a span {
+	background: url(../img/esports-ow.png);
+	transition-delay: 50ms;
+}
+.topNav .sportbox .events div:nth-of-type(2) a span {
+	background: url(../img/esports-gold.png);
+	transition-delay: 100ms;
+}
+.topNav .sportbox .events div:nth-of-type(3) a span {
+	background: url(../img/esports-heroes.png);
+	transition-delay: 150ms;
+}
+.topNav .sportbox .events div:nth-of-type(4) a span {
+	background: url(../img/esports-sc2-wcs.png);
+	transition-delay: 200ms;
+}
+.topNav .sportbox .events div:nth-of-type(5) a span {
+	background: url(../img/wariii.png);
+	transition-delay: 250ms;
+}
+.topNav .sportbox .events div > div.owevent {
+	display: inline-block;
+	height: 276px;
+	width: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: all .4s;
+	border-left: 1px solid rgba(0,0,0,.2);
+	border-right: 1px solid rgba(0,0,0,.2);
+}
+.topNav .sportbox .events div:first-of-type:hover div.owevent {
+	width: 100px;
+	opacity: 1;
+}
+.topNav .sportbox .events div div.owevent a {
+	height: 100px;
+	width: 100px;
+	display: block;
+	margin: -6px 0;
+	padding: 0;
+	background: rgba(21,26,35,1);
+}
+.topNav .sportbox .events div div.owevent a:hover img {
+	background: rgba(255,255,255,.1);
+	transition: all .5s;
+}
+.topNav .sportbox .moreevents a {
+	width: 100px;
+	height: 49px;
+	line-height: 49px;
+	font-size: 15px;
+	margin: 0 auto;
+	display: block;
+	color: rgba(255,255,255,.5);
+}
+.topNav .sportbox .moreevents a img {
+	position: relative;
+	top: 3px;
+}
+.topNav .accountbox {
+	height: 168px;
+	width: 320px;
+	left: auto;
+	right: 20px;
+	opacity: 0;
+	visibility: hidden;
+}
+.topNav .accountbox div {
+	height: 44px;
+	border-top: 1px solid rgba(255,255,255,.15);
+}
+.topNav .accountbox div:first-of-type {
+	height: 78px;
+	border: none;	
+}
+.topNav .accountbox div a {
+	display: block;
+	height: 43px;
+	transition: background-color .2s;
+}
+.topNav .accountbox div:first-of-type a {
+	width: 278px;
+	height: 38px;
+	line-height: 38px;
+	font-size: 16px;
+	font-weight: 600;
+	border: 1px solid #00AEFF;
+	background: #0E86CA;
+	margin: 0 auto;
+	position: relative;
+	top: 20px;
+}
+.topNav .accountbox div:first-of-type a:hover {
+	background: #00AEFF;
+}
+.topNav .accountbox div a span {
+	display: block;
+	float: left;
+	line-height: 44px;
+}
+.topNav .accountbox div a span:first-of-type {
+	width: 30px;
+	height: 26px;
+	margin: 7px 7px 0 11px;
+}
+.topNav .accountbox div:nth-of-type(2) a span:first-of-type {
+	background: url(../img/icon-sprite.png) no-repeat -132px -9px;
+}
+.topNav .accountbox div:nth-of-type(2) a:hover span:first-of-type {
+	background-position-y: -34px;
+}
+.topNav .accountbox div:nth-of-type(3) a span:first-of-type {
+	background: url(../img/icon-sprite.png) no-repeat -191px -12px;
+}
+.topNav .accountbox div:nth-of-type(3) a:hover span:first-of-type {
+	background-position-y: -36px;
+}
+.topNav .accountbox div a:hover {
+	background: rgba(255,255,255,.1);
+}
+.topNav .shade {
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,.6);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	opacity: 0;
+}
+.topNav .selectionL li:nth-of-type(2):hover + .shade,
+.topNav .selectionR li:nth-of-type(2):hover + .shade,
+.topNav .selectionL li:nth-of-type(5):hover + .shade  {
+	opacity: 1;
+	z-index: 3;
+}
+main #header {
+	width: 1024px;
+	position: relative;
+	margin: 0 auto 17px;
+}
+#header .gamelogo {
+	height: 184px;
+	width: 350px;
+	margin-top: 32px;
+	margin-left: 10px;
+	background: url(../img/home-v2016.png) no-repeat 0px 0px;
+}
+#header .gamelogo a {
+	display: block;
+	height: 100%;
+}
+#header .search {
+	height: 42px;
+	line-height: 335px;
+}
+#header .search .typeword {
+	height: 42px;
+	width: 302px;
+	line-height: 42px;
+	font-size: 14px;
+	padding: 6px 10px;
+	padding-right: 40px;
+	outline: none;
+	color: #FFF;
+	border: 1px solid #8BB6AD;
+	background: rgba(58,58,58,.3);
+}
+#header .search .submit {
+	background: url(../img/search.png) no-repeat;
+	border: none;
+	height: 25px;
+	width: 25px;
+	outline: none;
+	position: relative;
+	top: 6px;
+	right: 36px;
+	cursor: pointer;
+}
+.NavBar {
+	height: 52px;
+	width: 100%;
+	margin: 0 auto;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+.NavBar .nav {
+	display: block;
+	height: 52px;
+	position: relative;
+	padding-left: 58px;
+	background: url(../img/nav_bg-1.jpg) no-repeat;
+}
+.NavBar .nav > li {
+	width: 114px;
+	height: 52px;
+	position: relative;
+	overflow: hidden;
+}
+.nav > li:hover {
+	overflow: visible;
+}
+.nav > li:hover ul {
+	display: block;
+}
+.nav > li > a {
+	display: block;
+	height: 100%;
+	position: relative;
+	background: url(../img/nav_bg-1.jpg) no-repeat;
+}
+.nav li.nav1 a.active {
+	background-position: -58px -104px;
+}
+/*.nav li.nav1 a.active:hover {
+	background-position-y: -52px;
+} */
+.nav li.nav2 > a {
+	background-position: -172px 0;
+}
+.nav li.nav3 > a {
+	background-position: -286px 0;
+}
+.nav li.nav4 a {
+	background-position: -400px 0;
+}
+.nav li.nav5 a {
+	background-position: -514px 0;
+}
+.nav li.nav6 a {
+	background-position: -628px 0;
+}
+.nav li.nav7 a {
+	background-position: -742px 0;
+}
+.nav li.nav8 a {
+	background-position: -856px 0;
+}
+.nav > li:hover > a {
+	background-position-y: -52px;
+}
+.nav li.BarLeft {
+	background: url(../img/nav-sprite-l.png) no-repeat;
+	width: 91px;
+	height: 86px;
+	position: absolute;
+	top: -18px;
+	left: -38px;
+}
+.nav li.BarRight {
+	background: url(../img/nav-sprite-r.png) no-repeat;
+	width: 91px;
+	height: 70px;
+	position: absolute;
+	top: -18px;
+	right: -24px;
+}
+.nav ul {
+	position: absolute;
+	top: 46px;
+	left: 0;
+	display: none;
+}
+.nav ul li {
+	width: 114px;
+	height: 34px;
+	line-height: 32px;
+	font-size: 14px;
+	background-color: rgba(77,9,8,.95);
+}
+.nav ul li a {
+	width: 100%;
+	height: 100%;
+	display: block;
+	padding-left: 15px;
+	color: #CD998E;
+}
+.nav ul a:hover {
+	color: #FFF;
+	background: #81120C;
+}
+main .container {
+	width: 1024px;
+	margin: 0 auto 150px;
+	position: relative;
+	z-index: 1;
+	overflow: visible;
+}
+.container .MainLeft {
+	width: 703px;
+	background: url(../img/homeconmain-bg.png) repeat-y 0px 2px;
+}
+.MainLeft .NewsFlow {
+	width: 640px;
+	padding: 1px;
+	margin: 15px auto 25px;
+	border: 1px solid #B7894C;
+	position: relative;
+	box-sizing: content-box;
+}
+.MainLeft .NewsFlow img {
+	vertical-align: middle;
+}
+.MainLeft .newstext {
+	overflow: hidden;
+	background: rgba(0,0,0,.3);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border: 1px solid #FF000000;
+	border-top: 1px solid #B7894C;
+	padding: 1px;
+	box-sizing: border-box;
+	background-clip: padding-box;
+}
+.MainLeft .newstext p {
+	line-height: 40px;
+	padding-left: 10px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #FFF;
+}
+.MainLeft .newstext img {
+	width: 64px;
+	margin: 5px 10px;
+	border: 1px solid #FFDE00;
+}
+.MainLeft .Preview {
+	clear: both;
+	width: 660px;
+	margin: 0 auto;
+}
+.Preview ul.pre-board {
+	background: url(../img/news-eyes-bg.jpg) no-repeat 50% 100%;
+	overflow: hidden;
+}
+.Preview ul li {
+	width: 309px;
+	height: 217px;
+	background: url(../img/news-eyes-module.png) no-repeat;
+}
+.Preview ul li.newcard {
+	margin-left: 14px;
+}
+.Preview ul li.purchase {
+	margin-right: 14px;
+}
+.Preview ul li a {
+	display: block;
+	height: 144px;
+	width: 284px;
+	margin-left: 12px;
+	margin-top: 12px;
+}
+.Preview ul li a img {
+	padding: 2px;
+	width: 284px;
+	height: 144px;
+}
+.Preview ul li a:hover img {
+	background: #76B900;
+} 
+.Preview ul li p {
+	line-height: 54px;
+	text-align: center;
+	color: #2E1B1E;
+	font-weight: 700;
+}
+.Newslist .newswrap {
+	height: 162px;
+	padding: 30px 0;
+	margin: 0 25px;
+	border-top: 1px solid #CFDBA8;
+	border-bottom: 1px solid #DBC497;
+}
+.Newslist .newswrap:hover {
+	background: url(../img/homenewsbg.png) repeat-y 50% 0;
+}
+.Newslist .newswrap a.wrapnews {
+	overflow: hidden;
+	width: 200px;
+	height: 100px;
+	margin-bottom: 15px;
+}
+.newswrap a.wrapnews img {
+	float: left;
+	margin-left: 12px;
+	padding: 1px;
+	border: 1px solid #B7894C;
+}
+.newswrap a.wrapnews:hover img {
+	padding: 2px;
+	border: none;
+	background-color: #76B900;
+}
+.newswrap .wrapnews h3 {
+	color: #000;
+	font-weight: 600;
+}
+.wrapnews h3 + p {
+	margin-top: 10px;
+	font-size: 14px;
+	color: #695745;
+}
+.wrapnews h3,
+.wrapnews h3 + p,
+.newswrap p.comments {
+	padding-left: 238px;
+}
+.comL a span.commentIcon {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background:  url(../img/icon.png) no-repeat -81px -110px;
+}
+.comL .comnum {
+	color: #D25300;
+	font-size: 14px;
+}
+.comments .time {
+	padding-left: 20px;
+	color: #777;
+	font-size: 12px;
+}
+.MainLeft .Newsmore {
+	margin: 15px 30px 0;
+}
+.Newsmore .show {
+	text-align: center;
+	border: 1px solid #DDD;
+	border-radius: 3px;
+}
+.Newsmore .show .link {
+	display: block;
+	color: #5B4B38;
+	height: 42px;
+	line-height: 42px;
+	background: #D3B78B;
+}
+.Newsmore .show .link:hover {
+	background: #C9A369;
+}
+.Newsmore .show .link span:after {
+	content: '';
+	width: 7px;
+	height: 7px;
+	display: inline-block;
+	margin-left: 15px;
+	background: url(../img/more-icon.png) no-repeat;
+}
+.MainLeft .Leftbottom {
+	width: 703px;
+	height: 34px;
+	position: relative;
+	bottom: -10px;
+	left: 0;
+	background: url(../img/homeconmain-bg-bot.png) no-repeat;
+}
+
+/*首页右侧*/
+
+.container .MainRight {
+	width: 340px;
+	position: absolute;
+	top: 43px;
+	right: 0;
+	z-index: -1;
+	background: url(../img/homeconbar-bg.png) repeat-y;
+}
+.MainRight .Download {
+	width: 328px;
+	padding-bottom: 190px;
+	background: url(../img/home-bg-cr.jpg) no-repeat 0px -1px;
+}
+.Download .logo {
+	height: 192px;
+	width: 352px;
+	display: block;
+	background: url(../img/home_logo.png) no-repeat -6px 0;
+}
+.Download .device ul {
+	background: url(../img/device-icon.png) no-repeat 0px 0px;
+	height: 88px;
+	margin-left: 54px;
+	margin-top: 41px;
+}
+.device ul li {
+	width: 66px;
+	height: 86px;
+	margin-right: 14px;
+	outline: none;
+}
+.device ul li a {
+	display: block;
+	height: 100%;
+	background: url(../img/device-icon.png) no-repeat;
+}
+.device ul li.PC {
+	margin-left: 7px;
+}
+.device ul li.PC a {
+	background-position: -7px 0px;
+}
+.device ul li.apple a {
+	background-position: -87px 0px;
+}
+.device ul li.android a {
+	background-position: -167px 0px;
+}
+.device ul li.PC:hover a,
+.device ul li.apple:hover a,
+.device ul li.android:hover a {
+	background-position-y: -89px;
+}
+.device ul li.PC:focus a,
+.device ul li.apple:focus a,
+.device ul li.android:focus a {
+	background-position-y: -181px;
+}
+.device .DLbutton {
+	position: relative;
+	top: 107px;
+	left: 0;
+	margin-top: 20px;
+	margin-left: 9px;
+	background: url(../img/download-btn2.png) no-repeat -39px -373px;
+}
+.device .DLbutton a {
+	display: block;
+	position: relative;
+	z-index: 1;
+	width: 216px;
+	height: 57px;
+}
+.device .DLbutton video {
+	position: absolute;
+	top: -2px;
+	left: -2px;
+}
+.MainRight .Rwraper {
+	margin: 0 18px;
+}
+.Rwraper .Rinfo {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	position: relative;
+	overflow: hidden;
+	background: url(../img/moudel-top-bg.jpg) no-repeat;
+}
+.Rwraper .Rinfo h3 {
+	font-weight: 700;
+	padding-left: 15px;
+	color: #03345F;
+}
+.Rwraper .Rinfo h3 span {
+	vertical-align: middle;
+	display: inline-block;
+	width: 35px;
+	height: 40px;
+}
+.Rwraper .Rinfo .icon01 {
+	background: url(../img/icon.png) 0px 0px;
+}
+.Rwraper .Rinfo .icon02 {
+	background: url(../img/icon.png) -83px 1px;
+}
+.Rwraper .Rinfo .icon03 {
+	background: url(../img/icon.png) -41px -70px;
+}
+.Rwraper .Rinfo .icon04 {
+	background: url(../img/icon.png) -84px -36px;
+}
+.Rwraper .Rinfo .icon05 {
+	background: url(../img/icon.png) 0px -183px;
+}
+.Rinfo .esportpic {
+	text-align: center;
+	padding-top: 3px;
+	position: relative;
+}
+.esportpic .scalebg {
+	display: block;
+	position: absolute;
+	top: 4px;
+	right: 31px;
+	border-radius: 10px;
+	height: 122px;
+	width: 242px;
+	background: #000;
+	opacity: 0;
+	transition: opacity .3s;
+}
+.esportpic .picicon img {
+	position: absolute;
+	top: 3px;
+	right: 30px;
+	border-radius: 10px;
+	transition: all .4s;
+}
+.esportpic a:hover .scalebg {
+	opacity: 0.7;
+}
+.esportpic a:hover .picicon img {
+	transform: scale(1.1);
+}
+.esportpic .pictitle {
+	display: block;
+	line-height: 28px;
+	color: #251C0F;
+	font-weight: 700;
+}
+span.arrowL, span.arrowR {
+	display: block;
+	width: 8px;
+	height: 14px;
+	position: absolute;
+	top: 123px;
+}
+span.arrowL {
+	background: url(../img/esport-icon.gif) no-repeat 0px 0px;
+	left: 12px;
+}
+span.arrowR {
+	background: url(../img/esport-icon.gif) no-repeat -8px 0px;
+	right: 12px;
+}
+.Rinfo a.L1:hover .arrowL {
+	background-position-x: -16px;
+}
+.Rinfo a.R1:hover .arrowR {
+	background-position-x: -24px;
+}
+.Rinfo .live {
+	padding-top: 4px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+.live .picshadow {
+	position: absolute;
+	top: 69px;
+	left: 19px;
+	width: 265px;
+	height: 117px;
+	box-shadow: 0 0 20px #000 inset;
+}
+.Rinfo ul li a {
+	margin-left: 20px;
+	margin-right: 20px;
+	display: block;
+	border-bottom: 1px solid #E8D6A8;
+}
+.Rinfo ul li a span {
+	font-size: 12px;
+	line-height: 27px;
+	color: #5B4B38;
+}
+.Rinfo ul li a .arrowIcon {
+	display: inline-block;
+	width: 11px;
+	height: 12px;
+	background: url(../img/icon.png) -135px -138px;
+}
+.Rinfo ul li a:hover .arrowIcon {
+	background-position-y: -108px;
+}
+.Rinfo ul li a:hover .aTitle {
+	color: #DB6800;
+}
+.Rinfo a.more {
+	display: block;
+	height: 14px;
+	width: 36px;
+	margin-top: 10px;
+	margin-right: 15px;
+	background:  url(../img/icon-more.png) no-repeat 0px 0px;
+}
+#Rinfo1 {
+	overflow: visible;
+}
+.Rinfo .btminfo {
+	padding: 0 27px;
+	clear: both;
+	margin-top: 5px;
+}
+.Rinfo .community li {
+	height: 50px;
+	width: 125px;
+	margin-bottom: 15px;
+	display: inline-block; 
+}
+.Rinfo .community li span.Icon {
+	width: 36px;
+	height: 36px;
+	display: block;
+	float: left;
+}
+.Rinfo .community li a {
+	border: none;
+}
+.Rinfo .community li a .icontext {
+	margin-left: 7px;
+	line-height: 32px;
+}
+.Rinfo .community li a span {
+	font-size: 14px;
+}
+.Rinfo .community li a span.ewm {
+	display: block;
+	width: 112px;
+	height: 112px;
+	padding: 10px;
+	background: rgba(0,0,0,.5);
+	border-radius: 7px;
+	visibility: hidden;
+}
+.Rinfo .community li a:hover span.ewm {
+	visibility: visible;
+}
+.Rinfo .community li a span.ewm img {
+	width: 92px;
+	height: 92px;
+}
+.Rinfo .community .wechat {
+	position: relative;
+	background: url(../img/border.png) no-repeat right 13px;
+}
+.Rinfo .community .wechat .wechatIcon {
+	margin-top: 10px;
+	background: url(../img/Fshare.png) no-repeat -377px 0px;
+}
+.Rinfo .community .wechat a {
+	margin-left: 42px;
+	margin-right: 0;
+	height: 20px;
+	cursor: pointer;
+}
+.Rinfo .community .wechat a:nth-of-type(1) {
+	margin-top: 3px;
+}
+.Rinfo .community .wechat a:nth-of-type(1) span:nth-of-type(2),
+.Rinfo .community .wechat a:nth-of-type(1):hover span:nth-of-type(1) {
+	color: #16A667;
+}
+.Rinfo .community .wechat a:nth-of-type(2) span:nth-of-type(2),
+.Rinfo .community .wechat a:nth-of-type(2):hover span:nth-of-type(1) {
+	color: #F2743E;
+}
+.Rinfo .community .wechat a span.ewm {
+	position: absolute;
+	top: -102px;
+	left: 0;
+	z-index: 2;
+}
+.Rinfo .community .weibo a {
+	margin: 0 10px 10px;
+}
+.Rinfo .community .weibo a .weiboIcon {
+	background: url(../img/Fshare.png) no-repeat -209px 0;
+	transition: background-position .5s;
+}
+.Rinfo .community .weibo a:hover .weiboIcon {
+	background-position-y: -60px;
+}
+.Rinfo .community .weibo a:hover .icontext {
+	color: #F2743E;
+}
+.Rinfo .community .mhome a {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 8px;
+}
+.Rinfo .community .mhome a .hsIcon {
+	background: url(../img/Fshare.png) no-repeat -461px 0;
+	transition: background-position .5s;
+}
+.Rinfo .community .mhome a span.ewm {
+	position: absolute;
+	top: 29px;
+	left: 27px;
+	z-index: 2;
+}
+.Rinfo .community .mhome a span.ewm img {
+	width: 92px;
+	height: 92px;
+}
+.Rinfo .community .mhome a:hover .hsIcon{
+	background-position-y: -60px;
+}
+.Rinfo .community .mhome a:hover .icontext {
+	color: #F2743E;
+}
+.Rinfo .contact {
+	overflow: hidden;
+}
+.Rinfo .contact li {
+	width: 125px;
+}
+.Rinfo .contact li h5 {
+	font-size: 14px;
+	font-weight: 600;
+}
+.Rinfo .contact li a,
+.Rinfo .contact li span {
+	margin: 4px 0 0 0;
+	border: none;
+	font-size: 12px;
+	color: #251C0F;
+}
+.Rinfo .contact li a:hover {
+	color: #F2743E;
+}
+.Rinfo .contact .conL {
+	padding-right: 20px;
+	width: 135px;
+	background: url(../img/border.png) no-repeat right 6px;
+}
+.Rinfo .contact .conR {
+	margin-left: 15px;
+	width: 100px;
+}
+.MainRight .others {
+	margin: 0 40px 20px;
+}
+.others ul li {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	position: relative;
+}
+.others ul li div {
+	background: #D3B78B;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	height: 50px;
+	padding-top: 10px;
+	padding-left: 20px;
+}
+.others ul li h3 {
+ 	color: #251C0F;
+ 	font-weight: 600;
+ 	font-size: 15px;
+ 	padding-top: 4px;
+}
+.others ul li.safe h3, 
+.others ul li.service h3 {
+	padding-top: 13px;
+}
+.others ul li span {
+	color: #66563D;
+	font-weight: 600;
+	font-size: 13px;
+}
+.others ul li.titlenet div{
+	height: 70px;
+}
+.others ul li a {
+	display: block;
+	height: 62px;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	right: 0;
+}
+.others ul li.titlenet a {
+	height: 82px;
+}
+.others ul li.pay a {
+	background: url(../img/commnity-icon.png) no-repeat 177px -278px;
+}
+.others ul li.pay a:hover {
+	background-position: 171px -383px;
+}
+.others ul li.tmall a {
+	background: url(../img/commnity-icon.png) no-repeat 175px -778px;
+}
+.others ul li.tmall a:hover {
+	background-position: 179px -897px;
+}
+.others ul li.reward a {
+	background: url(../img/commnity-icon.png) no-repeat 178px -1024px;
+}
+.others ul li.reward a:hover {
+	background-position: 178px -1027px;
+}
+.others ul li.app a {
+	height: 56px;
+	background: url(../img/commnity-icon.png) no-repeat 181px -1129px;
+}
+.others ul li.app a:hover {
+	background-position: 181px -1247px;
+}
+.others ul li.safe a {
+	background: url(../img/commnity-icon.png) no-repeat 181px -1644px;
+}
+.others ul li.safe a:hover {
+	background-position: 184px -1734px;
+}
+.others ul li.service {
+	position: relative;
+}
+.others ul li.service a {
+	background: url(../img/commnity-icon.png) no-repeat 181px -2041px;
+}
+.others ul li.service a:hover {
+	background-position: 181px -2048px;
+}
+.others ul li.service span.qrc {
+	display: block;
+	position: absolute;
+	top: -164px;
+	left: 0;
+	z-index: 1;
+	visibility: hidden;
+	height: 170px;
+	width: 170px;
+	background: rgba(0,0,0,.5);
+	border-radius: 5px;
+}
+.others ul li.service a:hover + span.qrc {
+	visibility: visible;
+}
+.others ul li.service span.qrc img {
+	padding: 10px;
+	text-align: center;
+}
+.others ul li.bmall a {
+	background: url(../img/commnity-icon.png) no-repeat 179px -516px;
+}
+.others ul li.bmall a:hover {
+	background-position: 179px -618px;
+}
+.others ul li.joinus a {
+	background: url(../img/commnity-icon.png) no-repeat 179px -1349px;
+}
+.others ul li.joinus a:hover {
+	background-position: 179px -1437px;
+}
+.MainRight .Rightbottom {
+	width: 340px;
+	height: 40px;
+	position: absolute;
+	bottom: -40px;
+	right: 0;
+	background: url(../img/homeconbar-bg-bot.png) no-repeat;
+}
+main .Rightfloat {
+	position: fixed;
+	bottom: 10px;
+	right: 20px;
+	z-index: 5;
+}
+.Rightfloat div {
+	background: rgba(125,77,45,.8);
+	border-radius: 50%;
+}
+.Rightfloat a {
+	display: block;
+	width: 82px;
+	height: 82px;
+	margin: 10px 0;
+	position: relative;
+}
+.Rightfloat a img.apptext {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all .4s .4s;
+}
+.Rightfloat a img.appewm {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: rotateY(90deg);
+	transition: all .4s .4s;
+}
+.Rightfloat a:hover img.apptext {
+	transform: rotateY(-90deg);
+}
+.Rightfloat a:hover img.appewm {
+	transform: rotateY(0deg);
+}
+footer .footer {
+	width: auto;
+	height: 471px;
+	background: url(../img/footer.jpg) no-repeat 50% 0;
+	position: relative;
+}
+.footer .reg {
+	width: 100%;
+	height: 87px;
+	background: url(../img/reg-bg.png) no-repeat 50% 0;
+	position: absolute;
+	top: -30px;
+	margin: 0 auto;
+}
+.footer .reg a.register {
+	display: block;
+	width: 249px;
+	height: 81px;
+	margin: 9px auto 0 auto;
+	background: url(../img/reg-btn.png) no-repeat;
+}
+.footer .reg a.register:hover {
+	background-position: 0px -84px;
+}
+.footer .bottomwrap {
+	padding-top: 79px;
+	margin: 0 auto;
+	width: 997px;
+}
+.bottomwrap .line1 {
+	margin-bottom: 30px;
+}
+.line1 .infoL ul {
+	overflow: hidden;
+}
+.infoL ul li {
+	margin-right: 40px;
+}
+.infoL ul li a {
+	display: block;
+}
+.infoL ul li a span {
+	height: 21px;
+	line-height: 21px;
+	font-size: 14px;
+	vertical-align: middle;
+	color: #FFF;
+}
+.infoL ul li a .smallpic {
+	display: inline-block;
+	width: 21px;
+}
+.infoL ul li a .online {
+	background: url(../img/f-business.png) -5px -5px;
+}
+.infoL ul li a .feedback {
+	background: url(../img/f-business.png) -35px -5px;
+}
+.infoL ul li a .join {
+	background: url(../img/f-business.png) -7px -32px;
+}
+.infoR {
+	position: relative;
+}
+.infoR span {
+	color: #FFF;
+	font-size: 14px;
+	vertical-align: middle;
+	line-height: 30px;
+	height: 30px;
+}
+.infoR span {
+	display: inline-block;
+}
+.infoR a.NVIDIA span {
+	width: 100px;
+	height: 24px;
+	background: url(../img/business-logo.png) 101px 0px;
+}
+.infoR a.plusbutton span {
+	width: 16px;
+	height: 16px;
+	margin-left: 10px;
+	background: url(../img/plusbutton.jpg);
+}
+.infoR a.arrowbutton span {
+	width: 16px;
+	height: 16px;
+	margin-left: 7px;
+	background: url(../img/arrowbutton.jpg);
+}
+.bottomwrap .line2 {
+	padding-top: 40px;
+}
+.line2 .company {
+	display: inline-block;
+}
+.line2 .company a.blz {
+	display: inline-block;
+	width: 140px;
+	height: 90px;
+	background: url(../img/logo_blizzard.png) no-repeat;
+}
+.line2 .company a.netease {
+	display: inline-block;
+	width: 126px;
+	height: 40px;
+	margin-bottom: 10px;
+	background: url(../img/logo_ne.png) no-repeat;
+}
+.line2 .copyright {
+	display: inline-block;
+	width: 706px;
+	padding-left: 90px;
+}
+.copyright .copyinfo {
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+.copyright .copyinfo ul {
+	overflow: hidden;
+}
+.copyright .copyinfo ul li {
+	color: #552C09;
+	font-size: 12px;
+}
+.copyinfo ul li a {
+	color: #CCC;
+	font-size: 14px;
+	padding-left: 11px;
+	padding-right: 6px;
+}
+.copyinfo ul li:first-of-type a {
+	padding-left: 0;
+}
+.copyright .warning p {
+	color: #552C09;
+	font-size: 12px;
+	line-height: 20px;
+}
+.copyright .warning p:last-of-type {
+	padding-top: 6px;
+}
+.copyright .warning p a {
+	color: #552C09;
+}
+.copyright .warning p a:hover {
+	color: #CCC;
+}
