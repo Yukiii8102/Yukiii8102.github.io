@@ -1,0 +1,213 @@
+h1,h2,h3,h4,h5,h6,p {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	transition: all .5s;
+}
+body {
+	width: 100%;
+	height: 100%;
+	background: #AAA;
+}
+.container, .card:before, .card:after, .photo, .photo:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.container {
+	min-width: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	perspective: 1500px;
+}
+input.check {
+	display: none;
+}
+.card {
+	width: 400px;
+	height: 550px;
+	border-radius: 15px;
+	position: relative;
+	box-shadow: 0 0 5px 1px rgba(0,0,0,.4);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: transform .5s;
+	transform-style: preserve-3d;
+	transform-origin: center 40%;
+}
+.card:before,
+.card:after {
+	content: '';
+	display: block;
+	width: 400px;
+	height: 550px;
+}
+.card:before {
+	background: rgba(255,0,255,.15);
+	border-radius: 15px;
+	transition: background-color .2s;
+}
+.card:after {
+	background: rgba(0,0,0,1);
+	border-radius: 15px;
+	z-index: -5;
+	transition: transform .5s;
+}
+.check:checked + .card {
+	transform: rotateX(60deg) translateY(150px);
+	box-shadow: 0 50px 30px -5px rgba(0,0,0,.6);
+}
+.check:checked + .card:before {
+	background: none;
+}
+.check:checked + .card:after {
+	transform: translateZ(-20px);
+}
+.card .photo {
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background: url(../img/600x600.jpg) no-repeat bottom center;
+	background-size: cover;
+	border-radius: 15px;
+}
+.card .photo:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+	background: rgba(0,20,80,.7);
+	opacity: 0;
+	transition: opacity .5s;
+}
+.check:checked + .card .photo:before {
+	opacity: 1;
+}
+.card h1, p:nth-of-type(1) {
+	transform: translateZ(50px);
+}
+.card h1 {
+	font-size: 40px;
+}
+.card p:nth-of-type(1) {
+	margin-bottom: 20px;
+	font-size: 21px;
+}
+.card p:nth-of-type(2) {
+	margin-top: 20px;
+	font-size: 36px;
+}
+.check:checked + .card h1,
+.check:checked + .card p:nth-of-type(1) {
+	opacity: 0;
+	transform: translateZ(80px);
+}
+.check:checked + .card p:nth-of-type(2) {
+	transform: translateY(70px) translateZ(30px);
+}
+.card .chart .bar {
+	float: left;
+	width: 25px;
+	height: 25px;
+	margin: 0 10px;
+	position: relative;
+	transform-style: preserve-3d;
+	color: white;
+	transform: rotate(45deg);
+	background: #fff;
+	text-align: center;
+	transition: transform .5s;
+}
+.card .chart .bar:before {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	text-align: right;
+	background: linear-gradient(to bottom, #feffff 0%, #ddf1f9 0%, #a0d8ef 100%);
+	line-height: 25px;
+}
+.card .chart .bar:after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 25px;
+	background: linear-gradient(to bottom, #feffff 0%, #85d7f7 0%, #4c8596 100%);
+}
+.check:checked + .card .chart .bar {
+	color: black;
+}
+.check:checked + .card .chart .bar1 {
+	transform: translateZ(150px) rotate(30deg);
+}
+.check:checked + .card .chart .bar2,
+.check:checked + .card .chart .bar7 {
+	transform: translateZ(80px) rotate(30deg);
+}
+.check:checked + .card .chart .bar3 {
+	transform: translateZ(115px) rotate(30deg);
+}
+.check:checked + .card .chart .bar4 {
+	transform: translateZ(200px) rotate(30deg);
+}
+.check:checked + .card .chart .bar5,
+.check:checked + .card .chart .bar6 {
+	transform: translateZ(50px) rotate(30deg);
+}
+.card .chart .bar1:before {
+	content: '20,000';
+	width: 150px;
+	transform: rotateX(-90deg) rotateZ(-90deg) translateX(-75px) translateY(62.5px) translateZ(12.5px);
+}
+.card .chart .bar1:after {
+	width: 150px;
+	transform: rotateY(90deg) translateX(75px) translateZ(-50px);
+}
+.card .chart .bar2:before,
+.card .chart .bar7:before {
+	content: '10,000';
+	width: 80px;
+	transform: rotateX(-90deg) rotateZ(-90deg) translateX(-40px) translateY(27.5px) translateZ(12.5px);
+}
+.card .chart .bar2:after,
+.card .chart .bar7:after {
+	width: 80px;
+	transform: rotateY(90deg) translateX(40px) translateZ(-15px);
+}
+.card .chart .bar3:before {
+	content: '15,000';
+	width: 115px;
+	transform: rotateX(-90deg) rotateZ(-90deg) translateX(-57.5px) translateY(45px) translateZ(12.5px);
+}
+.card .chart .bar3:after {
+	width: 115px;
+	transform: rotateY(90deg) translateX(57.5px) translateZ(-32.5px);
+}
+.card .chart .bar4:before {
+	content: '24,000';
+	width: 200px;
+	transform: rotateX(-90deg) rotateZ(-90deg) translateX(-100px) translateY(87.5px) translateZ(12.5px);
+}
+.card .chart .bar4:after {
+	width: 200px;
+	transform: rotateY(90deg) translateX(100px) translateZ(-75px);
+}
+.card .chart .bar5:before,
+.card .chart .bar6:before {
+	content: '7,000';
+	width: 50px;
+	transform: rotateX(-90deg) rotateZ(-90deg) translateX(-25px) translateY(12.5px) translateZ(12.5px);
+}
+.card .chart .bar5:after,
+.card .chart .bar6:after {
+	width: 50px;
+	transform: rotateY(90deg) translateX(25px);
+}
