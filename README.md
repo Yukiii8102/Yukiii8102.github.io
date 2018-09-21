@@ -6,8 +6,11 @@
 动画盒子 [animationBox](https://yukiii8102.github.io/html+css/practices/animationbox.html)  
 &emsp;&emsp;&emsp;&emsp; [animationbox2](https://yukiii8102.github.io/html+css/practices/animationbox2.html)  
 悬停动画 [turningAnimation](https://yukiii8102.github.io/html+css/practices/turningAnimation.html)  
-单选、复选框 [checkbox](https://yukiii8102.github.io/html+css/practices/checkbox.html)
+单选、复选框 [checkbox](https://yukiii8102.github.io/html+css/practices/checkbox.html)  
 仿滑动开关 [button](https://yukiii8102.github.io/html+css/practices/button.html)
+## svg
+加载动画 [loading](https://yukiii8102.github.io/svg/loading.html)  
+svg, img, ttf实现图标 [icons](https://yukiii8102.github.io/svg/icons.html)
 ## javascript
 1111
 
