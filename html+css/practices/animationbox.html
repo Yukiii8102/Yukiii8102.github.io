@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="bigbox">
+			<div class="box">
+				<div class="side side_top"></div>
+				<div class="side side_bottom"></div>
+				<div class="side side_front"></div>
+				<div class="side side_back"></div>
+				<div class="side side_left"></div>
+				<div class="side side_right"></div>
+			</div>
+		</div>
+		<style>
+			body {
+				margin-top: 300px;
+			}
+			.bigbox {
+				width: 100px;
+				height: 100px;
+				margin: 100px auto;
+				perspective: 400px;
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				margin: 0 auto;
+				position: relative;
+				transform-origin: 50% 50%;
+				transform-style: preserve-3d;
+				animation: turning 3s ease-in-out infinite;
+			}
+			.side {
+				width: 100px;
+				height: 100px;
+				/*border-radius: 50%;*/
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.side_top {
+				background: yellow;
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			.side_bottom {
+				background: indianred;
+				transform: rotateX(90deg) translateZ(-100px);
+			}
+			.side_front {
+				background: lightgreen;
+				transform: translateZ(100px);
+			}
+			.side_back {
+				background: royalblue;
+				transform: translateZ(-100px);
+			}
+			.side_left {
+				background: lightblue;
+				transform: rotateY(90deg) translateZ(-100px);
+			}
+			.side_right {
+				background: orange;
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			@keyframes turning{
+				0% {transform: rotateX(0) rotateY(0);}
+				50% {transform: rotateX(0) rotateY(360deg);}
+				100% {transform: rotateX(360deg) rotateY(360deg);}
+			}
+		</style>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<label>
+			<input type="checkbox" class="rectangle"/>
+			<div class="checkbox1"></div>
+		</label>
+		<br />
+		<label>
+			<input type="checkbox" class="circle"/>
+			<div class="checkbox2"></div>
+		</label>
+		<br />
+		
+		<style type="text/css">
+			label {
+				display: inline-block;
+				position: relative;
+			}
+			input.rectangle,
+			input.circle {
+				display: none;
+			}
+			.checkbox1 {
+				width: 60px;
+				height: 30px;
+				background-color: #BBB;
+				transition: background-color .3s;
+			}
+			.checkbox1:before {
+				content: '';
+				position: absolute;
+				top: 3px;
+				left: 3px;
+				width: 24px;
+				height: 24px;
+				background-color: #FFF;
+				transition: left .3s;
+			}
+			.rectangle:checked + .checkbox1 {
+				background-color: dodgerblue;
+			}
+			.rectangle:checked + .checkbox1:before {
+				left: 33px;
+			}
+			.checkbox2 {
+				width: 60px;
+				height: 30px;
+				background-color: #BBB;
+				border-radius: 20px;
+				transition: background-color .3s;
+			}
+			.checkbox2:before {
+				content: '';
+				width: 24px;
+				height: 24px;
+				position: absolute;
+				top: 3px;
+				left: 3px;
+				background-color: #FFF;
+				border-radius: 20px;
+				transition: left .3s;
+			}
+			.circle:checked + .checkbox2 {
+				background-color: dodgerblue;
+			}
+			.circle:checked + .checkbox2:before {
+				left: 33px;
+			}
+		</style>
+	</body>
+</html>

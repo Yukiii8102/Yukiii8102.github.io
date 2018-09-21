@@ -1,0 +1,572 @@
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+.btns {
+	width: 800px;
+	margin: 0 auto;
+}
+.btn a, .btns a {
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: middle;
+	background: #CCC;
+	padding: 10px;
+	margin: 5px;
+	color: #555;
+	transition: all .3s;
+}
+.BounceIn:hover {
+	animation: BounceIn 1s linear;
+}
+@keyframes BounceIn{
+	0 {transform: scale(1);}
+	33% {transform: scale(1.2);}
+	66% {transform: scale(1.1);}
+	100% {transform: scale(1.2);}
+}
+.gif {
+	width: 180px;
+	height: 270px;
+	background: url(../img/004031q6mrp666ax4wrofx.png) no-repeat;
+	animation: gif 1s steps(7, start) infinite;
+}
+@keyframes gif{
+	0% {background-position: -16.666% 0;}
+	100% {background-position: 100% 0;}
+}
+.turning, .effect {
+	position: relative;
+}
+.turning a {
+	display: block;
+	width: 230px;
+	height: 230px;
+	padding: 0;
+	margin: 0;
+}
+.circleh {
+	width: 230px;
+	height: 230px;
+	background: linear-gradient(-45deg, limegreen 50%, orange 50%);
+	border-radius: 50%;
+	transition: all .8s ease-in-out;
+}
+.turning a .img {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.turning a .heading {
+	width: 210px;
+	height: 210px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+	visibility: hidden;
+	opacity: 0;
+	transition: all .7s;
+	color: #fff;
+}
+.turning a .heading:before {
+	content: '';
+	display: block;
+	width: 210px;
+	height: 210px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	visibility: hidden;
+	opacity: 0;
+	transition: all .7s;
+	border-radius: 50%;
+	background: #0007;
+}
+.turning a .heading h3,
+.turning a .heading p {
+	margin: 0 auto;
+	text-align: center;
+}
+.turning a .heading h3 {
+	padding: 50px 20px 5px;
+	width: 110px;
+	font-size: 22px;
+	border-bottom: 1px solid #fff;
+}
+.turning a .heading p {
+	padding-top: 10px;
+	width: 130px;
+	font-size: 12px;
+}
+.turning a:hover .circleh {
+	transform: rotate(180deg);
+}
+.turning a:hover .heading,
+.turning a:hover .heading:before {
+	opacity: 1;
+	visibility: visible;
+}
+
+/**/
+
+.effect a {
+	display: block;
+	width: 220px;
+	height: 220px;
+}
+.effect a .img {
+	width: 220px;
+	height: 220px;
+	background: url(../img/2.jpg);
+	border-radius: 50%;
+	margin: 0 auto;
+	position: relative;
+	top: 0;
+	left: 0;
+	transition: all .4s;
+}
+.effect a .img:before {
+	content: '';
+	display: block;
+	width: 190px;
+	height: 190px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 15px solid #fff7;
+	border-radius: 50%;
+}
+.effect a .headcont {
+	width: 220px;
+	height: 220px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.effect a .heading {
+	width: 220px;
+	height: 220px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .4s;
+	z-index: 1;
+	color: #fff;
+}
+.effect a .heading:before {
+	content: '';
+	display: block;
+	width: 220px;
+	height: 220px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	border-radius: 50%;
+	background: #0008;
+}
+.effect a .heading h3,
+.effect a .heading p {
+	margin: 0 auto;
+	text-align: center;
+}
+.effect a .heading h3 {
+	width: 110px;
+	font-size: 22px;
+	padding: 50px 20px 5px;
+	border-bottom: 1px solid #fff;
+}
+.effect a .heading p {
+	padding-top: 10px;
+	width: 150px;
+	font-size: 12px;
+}
+
+/**/
+
+.covering a .heading {
+	left: -230px;
+}
+.covering a:hover .img {
+	transform: rotate(-90deg);
+}
+.covering a:hover .heading {
+	left: 0;
+	opacity: 1;
+	visibility: visible;
+}
+
+/**/
+
+.shifting a .img {
+	z-index: 2;
+}
+.shifting a .heading {
+	left: -230px;
+}
+.shifting a:hover .img {
+	transform: scale(.5);
+	transform-origin: 150% 50% 0;
+	z-index: 3;
+}
+.shifting a:hover .heading {
+	left: 0;
+	opacity: 1;
+	visibility: visible;
+}
+
+/**/
+
+.replacing a:hover .img {
+	left: 220px;
+	opacity: 0;
+	visibility: hidden;
+}
+.replacing a:hover .heading {
+	opacity: 1;
+	visibility: visible;
+}
+
+/**/
+
+.showing a .heading {
+	transform: rotateY(60deg);
+	transition:all;
+}
+.showing a:hover .heading {
+	transform: rotateY(0);
+	opacity: 1;
+	visibility: visible;
+	transition: all .2s .2s;
+}
+
+/**/
+
+.hiding a .heading {
+	transform: scale(0.5);
+}
+.hiding a:hover .img {
+	transform: scale(1.5);
+	opacity: 0;
+	visibility: hidden;
+}
+.hiding a:hover .heading {
+	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
+}
+ /**/
+
+.hiding2 a .heading {
+	transform: scale(0.5);
+}
+.hiding2 a:hover .img {
+	transform: scale(0.5);
+	opacity: 0;
+	visibility: hidden;
+}
+.hiding2 a:hover .heading {
+	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
+	transition-delay: .5s;
+}
+
+/**/
+
+.hideshift a .heading {
+	left: -230px;
+}
+.hideshift a:hover .img {
+	transform: scale(.5);
+	opacity: 0;
+	visibility: hidden;
+}
+.hideshift a:hover .heading {
+	left: 0;
+	opacity: 1;
+	visibility: visible;
+	transition-delay: .25s;
+}
+
+/**/
+
+.scaleshift a .headcont {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(230px);
+}
+.scaleshift a .heading {
+	transform: scale(.5);
+	position: relative;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: none;
+}
+.scaleshift a:hover .imgcont {
+	transform: scale(.5);
+	transition: all .5s;
+}
+.scaleshift a:hover .img {
+	left: -230px;
+	opacity: 0;
+	visibility: hidden;
+	transition-delay: .5s;
+}
+.scaleshift a:hover .headcont {
+	transform: translateX(0);
+	opacity: 1;
+	visibility: visible;
+	transition: all .5s .5s;
+}
+.scaleshift a:hover .heading {
+	transform: scale(1);
+	transition-delay: 1s;
+}
+
+/**/
+
+.turnshift a .imgcont {
+	transition: all .5s;
+}
+.turnshift a .heading {
+	transform: scale(0.5);
+}
+.turnshift a:hover .imgcont {
+	transform: translateX(230px);
+	opacity: 0;
+	visibility: hidden;
+}
+.turnshift a:hover .img {
+	transform: rotate(360deg);
+}
+.turnshift a:hover .heading {
+	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
+	transition-delay: .2s;
+}
+
+/**/
+
+.scale a .heading {
+	transform: scale(.5);
+	z-index: -1;
+	opacity: 1;
+	visibility: visible;
+}
+.scale a .heading h3 {
+	padding-top: 15px;
+}
+.scale a:hover .img {
+	transform: scale(.5);
+	transform-origin: 50% 99% 0;
+}
+.scale a:hover .heading {
+	transform: scale(1);
+}
+
+/**/
+
+.turnscale a:hover .imgcont {
+	transform: scale(.5);
+	transition: all .5s;
+}
+.turnscale a:hover .img {
+	transform: rotateY(90deg);
+	opacity: 0;
+	visibility: hidden;
+	transition: all .5s;
+}
+.turnscale a .headcont {
+	transform: rotateY(-90deg);
+	transition: all .5s .4s;
+}
+.turnscale a .heading {
+	transform: scale(.5);
+	transition: all .5s .4s;
+}
+.turnscale a:hover .headcont {
+	transform: rotateY(0);
+	transition-delay: .5s;
+}
+.turnscale a:hover .heading {
+	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
+	transition-delay: .5s;
+}
+
+/**/
+.turnout a .imgcont {
+	transition: all .5s;
+}
+.turnout a .headcont {
+	transform: translateX(220px);
+	transition: all .5s;
+	pointer-events: none;
+}
+.turnout a:hover .imgcont {
+	transform: translateX(220px);
+}
+.turnout a:hover .img {
+	transform: rotate(360deg);
+	opacity: 0;
+	visibility: hidden;
+}
+.turnout a:hover .headcont {
+	transform: translateX(0);
+	transition-delay: .5s;
+}
+.turnout a:hover .heading {
+	transform: rotate(-360deg);
+	opacity: 1;
+	visibility: visible;
+	transition-delay: .5s;
+}
+
+/**/
+
+.runin a .heading h3 {
+	transform: translateX(-165px);
+	transition: all .5s;
+}
+.runin a .heading p {
+	transform: translateX(185px);
+	transition: all .5s;
+}
+.runin a:hover .heading {
+	opacity: 1;
+	visibility: visible;
+}
+.runin a:hover .heading h3,
+.runin a:hover .heading p {
+	transform: translateX(0);
+}
+
+/**/
+
+.pages {
+	perspective: 5000px;
+}
+.pages a .heading {
+	transform: rotateY(90deg);
+	transform-origin: 0 100% 0;
+}
+.pages a:hover .img {
+	transform: rotateY(-90deg);
+	transform-origin: 100% 0 0;
+	opacity: 0;
+	visibility: hidden;
+}
+.pages a:hover .heading {
+	transform: rotateY(0);
+	opacity: 1;
+	visibility: visible;
+	transition-delay: .5s;
+}
+
+/**/
+
+.pointturn a .heading {
+	opacity: 1;
+	visibility: visible;
+}
+.pointturn a .heading:before {
+	background: #0009;
+}
+.pointturn a .img {
+	z-index: 2;
+	transform-origin: 95.5% 40% 0;
+}
+.pointturn a .img:after {
+	content: '';
+	display: block;
+	width: 8px;
+	height: 8px;
+	background: #0009;
+	border-radius: 50%;
+	margin: -4px 0 0 -4px;
+	position: absolute;
+	top: 40%;
+	left: 95.5%;
+	z-index: 100;
+}
+.pointturn a:hover .img {
+	transform: rotate(-120deg);
+}
+
+/**/
+
+.scaleletter a .heading {
+	z-index: -1;
+	opacity: 1;
+	visibility: visible;
+}
+.scaleletter a .heading .hd {
+	height: 100%;
+	transform: scale(0);
+	opacity: 0;
+	visibility: hidden;
+	transition: all .4s;
+}
+.scaleletter a:hover .heading {
+	z-index: 2;
+}
+.scaleletter a:hover .heading .hd {
+	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
+}
+
+/**/
+
+.pageup a .img {
+	transform-origin: 0 0 0;
+}
+.pageup a .heading {
+	z-index: -1;
+	opacity: 1;
+	visibility: visible;
+}
+.pageup a:hover .img {
+	transform: rotateX(180deg);
+}
+
+/**/
+
+.scale2 a .heading {
+	transform: scale(0);
+}
+.scale2 a .heading h3 {
+	padding-bottom: 35px;
+}
+.scale2 a:hover .heading {
+	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
+}
+
+/**/
+
+.turn2 a .img {
+	transform-origin: 0 100% 40px;
+}
+.turn2 a .heading {
+	transform: rotateX(-90deg);
+	transform-origin: 0 0 40px;
+}
+.turn2 a:hover .img {
+	transform: rotateX(90deg);
+	opacity: 0;
+	visibility: hidden;
+}
+.turn2 a:hover .heading {
+	transform: rotateX(0deg);
+	opacity: 1;
+	visibility: visible;
+}

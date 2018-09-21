@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<label>
+			<input type="radio" name="job"/>
+			<div class="radio">前端工程师</div>
+		</label>
+		<label>
+			<input type="radio" name="job"/>
+			<div class="radio">视觉设计师</div>
+		</label>
+		<hr />
+		<label>
+			<input type="checkbox" name="major"/>
+			<div class="checkbox">SVG</div>
+		</label>
+		<label>
+			<input type="checkbox" name="major"/>
+			<div class="checkbox">HTML5</div>
+		</label>
+		<label>
+			<input type="checkbox" name="major"/>
+			<div class="checkbox">JAVA</div>
+		</label>
+		<style>
+			input[type="radio"],
+			input[type="checkbox"] {
+				display: none;
+			}
+			.radio,
+			.checkbox {
+				display: inline-block;
+				font-size: 13px;
+				padding: 10px 15px 10px 10px;
+				background: lightgrey;
+				border-radius: 5px;
+			}
+			.radio:before,
+			.checkbox:before {
+				content: '';
+				display: inline-block;
+				width: 10px;
+				height: 14px;
+				line-height: 14px;
+				padding-right: 10px;
+				background: url(img/input-unchecked.png);
+			}
+			input[type="radio"]:checked + .radio,
+			input[type="checkbox"]:checked + .checkbox {
+				background: palegreen;
+			}
+			input[type="radio"]:checked + .radio:before,
+			input[type="checkbox"]:checked + .checkbox:before {
+				background: url(img/input-checked.png) no-repeat;
+			}
+		</style>
+	</body>
+</html>
