@@ -18,7 +18,7 @@ svg, img, ttf实现图标 [icons](https://yukiii8102.github.io/svg/icons.html)
 小球触边重置 按键变向 [ball-through](https://yukiii8102.github.io/javascript/keypress2-through.html)  
 小球斜向移动 触边反弹 按键变向 [ball-leaning](https://yukiii8102.github.io/javascript/keypress3-lean.html)  
 模拟抽奖转盘 [lottery](https://yukiii8102.github.io/javascript/lottery.html)  
-简陋选项卡 可关闭 [textcard1](https://yukiii8102.github.io/javascript/textcard1.html)
+简陋选项卡 可关闭 [textcard1](https://yukiii8102.github.io/javascript/textcard1.html)  
 四色选项卡 [textcard2](https://yukiii8102.github.io/javascript/textcard2.html)
 ## jQuery
 飞机大战 [plane](https://yukiii8102.github.io/jQuery/plane/plane.html)  
