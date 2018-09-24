@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <div class="stage">
+        <ul>
+            <li>Card 1</li>
+            <li>Card 2</li>
+            <li>Card 3</li>
+            <li>Card 4</li>
+        </ul>
+        <div class="content">
+            <div class="card">card1111111111111111111111card1111111111111111111111card1111111111111111111111card1111111111111111111111card1111111111111111111111card1111111111111111111111card1111111111111111111111card1111111111111111111111</div>
+            <div class="card">card2222222222222222222222</div>
+            <div class="card">card3333333333333333333333</div>
+            <div class="card">card4444444444444444444444</div>
+        </div>
+    </div>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .stage {
+            width: 500px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        ul {
+            font-size: 0;
+            text-align: center;
+        }
+        ul li {
+            list-style: none;
+            font-size: 16px;
+            color: white;
+            background: #333333;
+            display: inline-block;
+            width: 25%;
+            height: 50px;
+            line-height: 50px;
+            user-select: none;
+        }
+        .content {
+            height: 200px;
+            width: 500px;
+            margin: 0 auto;
+            background: #666;
+            position: relative;
+        }
+        .card {
+            height: 190px;
+            width: 480px;
+            position: absolute;
+            padding: 5px 10px;
+            word-wrap: break-word;
+            background: lightblue;
+            display: none;
+        }
+        .active {
+            background: lightblue;
+        }
+    </style>
+
+    <script>
+        var li = $('li');
+        var card = $('.card');
+        $('li:first').addClass('active');
+        $('.card:first').show();
+        li.click(function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            // $(this).css('background-color','lightblue').siblings().css('background-color','#333');
+            // console.log($(card[$(this).index()]));
+            // card.hide();
+            // card.eq($(this).index()).toggle();
+            card.eq($(this).index()).show().siblings().hide();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link href="./bootstrap/asset/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <style>
+        .container {
+                  background: lightblue;
+              } 
+              </style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3 col001"></div>
+            <div class="col-xs-3 col002"></div>
+            <div class="col-xs-3 col003"></div>
+            <div class="col-xs-3 col004"></div>
+        </div>
+        <button type="button" class="btn btn-danger center-block" onclick="getdate()">（危险）Danger</button>
+    </div>
+
+    <div class="demo"></div>
+    <img src="" alt="">
+
+    <script>
+        var pageNum = 1;
+
+        function getdate() {
+            $.get("https://www.apiopen.top/meituApi", {
+                    'page': pageNum
+                },
+                function (data, textStatus, jqXHR) {
+                    var x = data;
+                    $.each(x.data, function (index, value) { 
+                        if (index %4 == 0) {
+                            $('.col001').append('<img src="' + value.url + '" class="img-thumbnail" />');
+                        } else if (index %4 == 1) {
+                            $('.col002').append('<img src="' + value.url + '" class="img-thumbnail" />');
+                        } else if (index %4 == 2) {
+                            $('.col003').append('<img src="' + value.url + '" class="img-thumbnail" />');
+                        } else if (index %4 == 3) {
+                            $('.col004').append('<img src="' + value.url + '" class="img-thumbnail" />');
+                        }
+                    });
+                },
+                "json"
+            );
+            pageNum++;
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- $.get("https://www.apiopen.top/meituApi?page=1", -->
+<!-- https://www.apiopen.top/meituApi -->

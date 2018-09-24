@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./less/slider.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <div id="box">
+        <div id="imgs">
+            <img class="pic" src="./img/1.png" alt="">
+            <img class="pic" src="./img/2.png" alt="">
+            <img class="pic" src="./img/3.png" alt="">
+            <img class="pic" src="./img/4.png" alt="">
+        </div>
+        <div class="pages">
+            <span id="prev"><i class="fa fa-chevron-left fa-2x"></i></span>
+            <span id="next"><i class="fa fa-chevron-right fa-2x"></i></span>
+        </div>
+        <div id="pagination"></div>
+        <script>
+            var clickable = true;
+            var num = 0;
+            $('.pic').each(function() {
+                $('#pagination').append('<b></b>')
+            })
+            //为小圆点和图片添加索引值
+            for (i = 0; i < $('b').length; i++) {
+                $('b')[i].index = i;
+                $('.pic')[i].index = i;
+            }
+            $('#prev').click(function() {
+                if(clickable) {
+                    clickable = !clickable;
+                    num--;
+                    pageChange();
+                    $('.pic:last').insertBefore($('.pic:first'));
+                    $('#imgs').css({'transition-duration':'0s', 'margin-left':'-498px'});
+                    setTimeout(function() {
+                        $('#imgs').css({'transition-duration':'.5s', 'margin-left':'0px'});
+                    })
+                    setTimeout(function() {
+                        clickable = !clickable;
+                    }, 500);
+                }
+            })
+            $('#next').click(function() {
+                if(clickable) {
+                    clickable = !clickable;
+                    num++;
+                    pageChange();
+                    $('#imgs').css({'transition-duration':'.5s', 'margin-left':'-498px'});
+                    setTimeout(function() {
+                        $('#imgs').css({'transition-duration':'0s', 'margin-left':'0px'});
+                        $('.pic:first').insertAfter($('.pic:last'));
+                        clickable = !clickable;
+                    }, 500)
+                }
+            })
+            //小圆点高亮
+            function pageChange() {
+                if (num < 0) {
+                    num = $('b').length -1;
+                } else if (num > $('b').length -1) {
+                    num = 0;
+                }
+                $('b').eq(num).css('background-color', 'lightseagreen').siblings().css('background-color', 'white');
+            }
+            pageChange();
+            //点击下方标签切换图片
+            $('b').click(function() {
+                var oldIn = $('.pic')[0].index;
+                var newIn = this.index;
+                var oldIno = oldIn-1;
+                var newIno = newIn-1;
+                // console.log('this.index newIn' + this.index);
+                // console.log('pic.index oldIn' + $('.pic')[0].index);
+                if(clickable) {
+                    clickable = !clickable;
+                    setTimeout(function() {
+                        clickable = !clickable;
+                    }, 500);
+                    if(newIn < oldIn) {
+                        for(i = oldIn; i > newIn; i--) {
+                            $('.pic:last').insertBefore($('.pic:first'));
+                        }
+                        // 要切换到的图和原图之间的图片隐藏
+                        if(newIno < 0) {
+                            $('.pic').eq(newIn).nextUntil($('.pic').eq(oldIn)).hide(0).delay(500).show(0);
+                        } else {
+                            $('.pic').eq(newIno).nextUntil($('.pic').eq(oldIno)).hide(0).delay(500).show(0);
+                        }
+                        //切换和恢复
+                        $('#imgs').css({'transition-duration': '0s', 'margin-left': '-498px'}).delay(0);
+                        setTimeout(function() {
+                            $('#imgs').css({'transition-duration': '.5s', 'margin-left': '0px'});
+                        })
+                    } else if(newIn > oldIn) {
+                        if(oldIno < 0) {
+                            $('.pic').eq(oldIn).nextUntil($('.pic').eq(newIn)).hide(0).delay(500).show(0);
+                        } else {
+                            $('.pic').eq(oldIno).nextUntil($('.pic').eq(newIno)).hide(0).delay(500).show(0);
+                        }
+                        $('#imgs').css({'transition-duration': '.5s', 'margin-left': '-498px'});
+                        setTimeout(function() {
+                            $('#imgs').css({'transition-duration': '0s', 'margin-left': '0px'});
+                            for(i = oldIn; i < newIn; i++) {
+                                $('.pic:first').insertAfter('.pic:last');
+                            }
+                        }, 500)
+                    }
+                    //小圆点
+                    num = this.index;
+                    pageChange();
+                }
+            })
+        </script>
+    </div>
+
+<!-- let 为代码块的作用域，所以每一次 for 循环，console.log(i); 都引用到 for 代码块
+    作用域下的i，因为这样被引用，所以 for 循环结束后，这些作用域在 setTimeout 
+    未执行前都不会被释放。
+    for(let j = newIn +1; j < oldIn; j++) {
+        $('.pic').eq(j).hide();
+        setTimeout(function() {
+            $('.pic').show();
+        }, 500);
+    } -->
+<!--1.给图片和小圆点添加索引值 √
+    2.点击小圆点时 获取其索引值 √
+    3.将当前图片索引值($('.pic')[0].index)与被点击的小圆点索引值对比 √
+    4.将圆索引的第x张图片和两者之前图片全部移到当前图片面前(prev) √
+    5.同时 使两者之间的图片hide() 再setTimeout show() 调整margin-left
+    6.(next)直接使两者之间图片hide()再show()-->
+
+    <!-- 2 3 0 1 => 0 1 2 3 -->
+    <!-- 3 0 1 2 => 1 2 3 0 -->
+</body>
+</html>
