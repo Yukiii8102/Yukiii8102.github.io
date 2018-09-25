@@ -106,7 +106,6 @@ var randomNumber = function(min, max) {
 
 Enemy.prototype.create = function() {
     this.counter ++;
-    console.log(this.counter);
     if (this.counter%14 == 0) {
         //生成大飞机
         this.newEnemy = new Plane(randomNumber(enemyPlaneL.width/2, stageSizeX-enemyPlaneL.width/2), 0, enemyPlaneL, 1);
@@ -224,11 +223,43 @@ var newBulletMove = function() {
 var time = 0;
 var timeSet;
 
+// 设置cookie的函数
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + exdays *24 *60 *60 *1000);
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires;
+}
+
+// 寻找cookie的函数
+function findCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(cname) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+// 初始化 如果没有最高分数 则设置cookie为0
+if (findCookie('highscore') == "" || findCookie('highscore') == null) {
+    setCookie('highscore', 0, 7);
+}
+
 function gameOver() {
     ourPlaneA.imgNode.src = ourPlaneA.boomSrc;
     clearInterval(timeSet);
     document.querySelector('div#final-score').innerHTML = score;
     settlementDiv.style.display = 'block';
+
+    // 判断游戏分数并更新
+    if (score > parseInt(findCookie('highscore')) ) {
+        setCookie('highscore', score, 7);
+        alert('你获得了历史最高分数:' + score);
+    }
 }
 
 var start = function () {
