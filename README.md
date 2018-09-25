@@ -23,6 +23,7 @@ svg, img, ttf实现图标 [icons](https://yukiii8102.github.io/svg/icons.html)
 ## jQuery
 飞机大战 [plane](https://yukiii8102.github.io/jQuery/plane/plane.html)  
 轮播图 [slider](https://yukiii8102.github.io/jQuery/slider/slider.html)  
+仿Windows 10 通知 [notification](https://yukiii8102.github.io/jQuery/toast.html)  
 jQuery选项卡 [textcard3](https://yukiii8102.github.io/jQuery/jQcard.html)  
 感知鼠标方向按钮 [mouse](https://yukiii8102.github.io/jQuery/mouse.html)  
 放大镜1 [zoom1](https://yukiii8102.github.io/jQuery/zoom.html)  
