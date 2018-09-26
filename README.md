@@ -28,13 +28,14 @@ Cookie练习 [cookie](https://yukiii8102.github.io/javascript/practices/cookie.h
 Localstorage练习 [localstorage](https://yukiii8102.github.io/javascript/practices/localstorage.html)  
 ## jQuery
 轮播图 [slider](https://yukiii8102.github.io/jQuery/slider/slider.html)  
-仿Windows 10 通知 [notification](https://yukiii8102.github.io/jQuery/toast.html)  
-jQuery选项卡 [textcard3](https://yukiii8102.github.io/jQuery/jQcard.html)  
-感知鼠标方向按钮 [mouse](https://yukiii8102.github.io/jQuery/mouse.html)  
-放大镜 [zoom1](https://yukiii8102.github.io/jQuery/zoom.html)  
-&emsp;&emsp;&emsp; [zoom2](https://yukiii8102.github.io/jQuery/zoom1.html)  
-动画放大镜 [zoom3](https://yukiii8102.github.io/jQuery/zoomclip.html)  
-侧边栏 [side-menu](https://yukiii8102.github.io/jQuery/side-menu.html)  
+
+仿Windows 10 通知 [notification](https://yukiii8102.github.io/jQuery/practices/toast.html)  
+jQuery选项卡 [textcard3](https://yukiii8102.github.io/jQuery/practices/jQcard.html)  
+感知鼠标方向按钮 [mouse](https://yukiii8102.github.io/jQuery/practices/mouse.html)  
+放大镜 [zoom1](https://yukiii8102.github.io/jQuery/practices/zoom.html)  
+&emsp;&emsp;&emsp; [zoom2](https://yukiii8102.github.io/jQuery/practices/zoom1.html)  
+动画放大镜 [zoom3](https://yukiii8102.github.io/jQuery/practices/zoomclip.html)  
+侧边栏 [side-menu](https://yukiii8102.github.io/jQuery/practices/side-menu.html)  
 ### ajax
 获取评论 [comment](https://yukiii8102.github.io/jQuery/ajax/ajax1.html)  
 获取图片 [picture](https://yukiii8102.github.io/jQuery/ajax/ajax2.html)
