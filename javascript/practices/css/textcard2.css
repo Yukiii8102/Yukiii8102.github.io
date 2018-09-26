@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: lightblue;
+  margin: 15px;
+}
+body li {
+  list-style: none;
+  text-align: center;
+  color: white;
+}
+body li:nth-child(1).active {
+  background: red;
+}
+body li:nth-child(2).active {
+  background: blue;
+}
+body li:nth-child(3).active {
+  background: green;
+}
+body li:nth-child(4).active {
+  background: orange;
+}
+body #text {
+  background: #333;
+  height: 200px;
+  line-height: 200px;
+}
+body #text .text {
+  width: 100%;
+  height: 100%;
+  line-height: 200px;
+  display: none;
+}
+body #text .text.active {
+  display: block;
+}
+body #card {
+  height: 50px;
+  font-size: 0px;
+  background: #333;
+}
+body #card .cards {
+  display: inline-block;
+  width: 25%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  -webkit-user-select: none;
+          user-select: none;
+}
+/*# sourceMappingURL=./textcard2.css.map */

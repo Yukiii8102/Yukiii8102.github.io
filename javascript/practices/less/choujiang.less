@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    .background {
+        width: 650px;
+        height: 600px;
+        margin: 0 auto;
+        position: relative;
+        background: url("../images/turntable-bg.jpg") no-repeat;
+        border: 1px solid red;
+
+        .pointer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            margin-top: -150px;
+            margin-left: -67px;
+        }
+
+        .zhuanpan {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -240px;
+            margin-left: -209px;
+            // transition: transform 4s;
+            transform-origin: 50% 49.6%;
+        }
+    }
+}

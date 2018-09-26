@@ -1,0 +1,80 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+#stage {
+  width: 320px;
+  height: 568px;
+  margin: 0 auto;
+  position: relative;
+}
+#stage #start,
+#stage #main,
+#stage #settlement {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#stage #start {
+  background-image: url(../images/background-start.png);
+  display: block;
+}
+#stage #start button {
+  background: none;
+  border: 1px solid black;
+  border-radius: 20px;
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+}
+#stage #main {
+  background-image: url(../images/background-game.png);
+  display: none;
+  position: relative;
+}
+#stage #main #menu {
+  display: none;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  padding: 250px 0;
+}
+#stage #main #menu div {
+  border: 1px solid #000;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin: 10px auto;
+}
+#stage #main img {
+  position: absolute;
+}
+#stage #settlement {
+  display: none;
+  text-align: center;
+}
+#stage #settlement div {
+  margin: 20px 0;
+}
+#stage #settlement div:first-of-type {
+  padding-top: 200px;
+}
+#stage #settlement button {
+  background: none;
+  border: 1px solid #000;
+  padding: 5px 30px;
+  border-radius: 20px;
+}
+.createcookie {
+  display: block;
+  margin: 10px auto;
+}
