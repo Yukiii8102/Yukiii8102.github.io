@@ -13,6 +13,8 @@
 加载动画 [loading](https://yukiii8102.github.io/svg/loading.html)  
 svg, img, ttf实现图标 [icons](https://yukiii8102.github.io/svg/icons.html)
 ## javascript
+飞机大战-cookie保存最高分数 [plane](https://yukiii8102.github.io/javascript/plane-cookie/plane.html)  
+飞机大战改良-没有cookie时localstorage保存最高分数 [plane2](https://yukiii8102.github.io/jQuery/plane-local/plane.html)  
 方块沿边缘循环移动 [animate-block](https://yukiii8102.github.io/javascript/animate-block.html)  
 小球触边反弹 按键变向 [ball-bouncing](https://yukiii8102.github.io/javascript/keypress1-bounce.html)  
 小球触边重置 按键变向 [ball-through](https://yukiii8102.github.io/javascript/keypress2-through.html)  
@@ -23,7 +25,6 @@ svg, img, ttf实现图标 [icons](https://yukiii8102.github.io/svg/icons.html)
 Cookie练习 [cookie](https://yukiii8102.github.io/javascript/cookie.html)  
 Localstorage练习 [localstorage](https://yukiii8102.github.io/javascript/localstorage.html)  
 ## jQuery
-飞机大战 [plane](https://yukiii8102.github.io/jQuery/plane/plane.html)  
 轮播图 [slider](https://yukiii8102.github.io/jQuery/slider/slider.html)  
 仿Windows 10 通知 [notification](https://yukiii8102.github.io/jQuery/toast.html)  
 jQuery选项卡 [textcard3](https://yukiii8102.github.io/jQuery/jQcard.html)  
