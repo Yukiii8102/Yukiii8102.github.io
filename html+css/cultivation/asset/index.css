@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 header {
   background: url(../asset/images/banner.jpg) no-repeat;
   padding-top: 15px;
@@ -63,6 +66,23 @@ header .grids {
   position: relative;
   top: 100px;
 }
+header .grids .ani_grids > div {
+  position: relative;
+  opacity: 0;
+  transition-timing-function: ease-in-out;
+}
+header .grids .ani_grids > div:nth-of-type(1) {
+  left: -200px;
+}
+header .grids .ani_grids > div:nth-of-type(2) {
+  top: -200px;
+}
+header .grids .ani_grids > div:nth-of-type(3) {
+  bottom: -200px;
+}
+header .grids .ani_grids > div:nth-of-type(4) {
+  right: -200px;
+}
 header .grids .col-xs-6 {
   text-align: center;
 }
@@ -91,6 +111,16 @@ main .aboutUs {
   padding-top: 130px;
   padding-bottom: 50px;
 }
+main .aboutUs .ani_about > div {
+  position: relative;
+  opacity: 0;
+}
+main .aboutUs .ani_about > div:nth-of-type(1) {
+  right: -400px;
+}
+main .aboutUs .ani_about > div:nth-of-type(2) {
+  left: -400px;
+}
 main .aboutUs .row .col-md-5 img {
   width: 100%;
 }
@@ -103,6 +133,19 @@ main .aboutUs .row .col-md-7 p {
 main .ourService {
   background: #37353b;
   color: #fff;
+}
+main .ourService .ani_service > div {
+  position: relative;
+  opacity: 0;
+}
+main .ourService .ani_service > div:nth-of-type(1) {
+  left: -300px;
+}
+main .ourService .ani_service > div:nth-of-type(2) {
+  bottom: -300px;
+}
+main .ourService .ani_service > div:nth-of-type(3) {
+  right: -300px;
 }
 main .ourService .col-lg-4 .thumbnail {
   background: none;
@@ -130,6 +173,11 @@ main .ourService .col-lg-4 .thumbnail .caption p {
 }
 main .latestWork {
   background: #eee;
+}
+main .latestWork.ani_work {
+  transform: scale(0.5);
+  opacity: 0;
+  transition: 0.75s cubic-bezier(0.53, 1.82, 0.52, 0.69);
 }
 main .latestWork .row {
   padding: 0 15px;
@@ -219,6 +267,7 @@ main .others .col-sm-4 h1 {
   font-size: 40px;
 }
 main .others .col-sm-4 .card {
+  max-width: 420px;
   margin-bottom: 10px;
   height: 75px;
   clear: both;
@@ -410,20 +459,28 @@ footer #toTop {
   main .latestNews div .readmore {
     margin: 0 auto;
   }
+  main .others .col-sm-4 .card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
   main .others .col-sm-4:nth-of-type(1) .card,
   main .others .col-sm-4:nth-of-type(3) .card {
-    margin: 0 70px 10px 70px;
+    margin-bottom: 10px;
+    min-width: 260px;
   }
   main .others .col-sm-4:nth-of-type(1) .contact,
   main .others .col-sm-4:nth-of-type(3) .contact {
-    margin: 0 140px 10px 140px;
+    margin-bottom: 10px;
   }
   main .others .col-sm-4:nth-of-type(1) .contact div,
   main .others .col-sm-4:nth-of-type(3) .contact div {
-    padding-left: 70px;
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
   }
   main .others .col-sm-4:nth-of-type(2) .card {
-    height: 300px !important;
+    min-height: 280px !important;
   }
   main .others .col-sm-4:nth-of-type(2) .card li {
     width: 230px;

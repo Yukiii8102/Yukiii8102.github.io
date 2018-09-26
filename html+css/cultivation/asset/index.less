@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 header {
     background: url(../asset/images/banner.jpg) no-repeat;
     padding-top: 15px;
@@ -67,6 +71,24 @@ header {
     .grids {
         position: relative;
         top: 100px;
+        .ani_grids>div {
+            position: relative;
+            opacity: 0;
+            transition-timing-function: ease-in-out;
+
+            &:nth-of-type(1) {
+                left: -200px;
+            }
+            &:nth-of-type(2) {
+                top: -200px;
+            }
+            &:nth-of-type(3) {
+                bottom: -200px;
+            }
+            &:nth-of-type(4) {
+                right: -200px;
+            }
+        }
         .col-xs-6 {
             text-align: center;
             .thumbnail {
@@ -99,6 +121,17 @@ main {
         background: #eee;
         padding-top: 130px;
         padding-bottom: 50px;
+        .ani_about>div {
+            position: relative;
+            opacity: 0;
+
+            &:nth-of-type(1) {
+                right: -400px;
+            }
+            &:nth-of-type(2) {
+                left: -400px;
+            }
+        }
         .row {
             .col-md-5 img {
                 width: 100%;
@@ -114,6 +147,20 @@ main {
     .ourService {
         background: #37353b;
         color: #fff;
+        .ani_service>div {
+            position: relative;
+            opacity: 0;
+
+            &:nth-of-type(1) {
+                left: -300px;
+            }
+            &:nth-of-type(2) {
+                bottom: -300px;
+            }
+            &:nth-of-type(3) {
+                right: -300px;
+            }
+        }
         .col-lg-4 {
             .thumbnail {
                 background: none;
@@ -143,6 +190,11 @@ main {
     }
     .latestWork {
         background: #eee;
+        &.ani_work {
+            transform: scale(.5);
+            opacity: 0;
+            transition: .75s cubic-bezier(.53,1.82,.52,.69);
+        }
         .row {
             padding: 0 15px;
             .latest {
@@ -240,6 +292,7 @@ main {
                 font-size: 40px;
             }
             .card {
+                max-width: 420px;
                 margin-bottom: 10px;
                 height: 75px;
                 clear: both;
@@ -460,22 +513,30 @@ footer {
         }
         .others {
             .col-sm-4 {
+                .card {
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 20px;
+                }
+
                 &:nth-of-type(1),
                 &:nth-of-type(3) {
-                    @center: 70px;
                     .card {
-                        margin: 0 @center 10px @center;
+                        margin-bottom: 10px;
+                        min-width: 260px;
                     }
                     .contact {
-                        margin: 0 @center*2 10px @center*2;
+                        margin-bottom: 10px;
                         div {
-                            padding-left: @center;
+                            width: 180px;
+                            margin-left: auto;
+                            margin-right: auto;
                         }
                     }
                 }
                 &:nth-of-type(2) {
                     .card {
-                        height: 300px !important;
+                        min-height: 280px !important;
                         li {
                             width: 230px;
                             margin-left: auto;
