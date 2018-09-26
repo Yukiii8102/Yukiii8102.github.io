@@ -19,7 +19,7 @@ $('.nav .glyphicon-menu-hamburger').click(function (e) {
 // 窗口底部
 var winNearBottom;
 $(window).scroll(function () { 
-    winNearBottom = $(document).scrollTop() + $(window).height() - 50;
+    winNearBottom = $(document).scrollTop() + $(window).height();
     if (winNearBottom > $('.ani_about').offset().top) {
         ani('.ani_about');
     }
@@ -32,7 +32,29 @@ $(window).scroll(function () {
             'opacity': 1
         });
     }
+    if (winNearBottom > $('.ani_news').offset().top) {
+        ani('.ani_news');
+    }
+    if (winNearBottom > $('.ani_other').offset().top) {
+        ani('.ani_other');
+        $('.ani_other>div:nth-of-type(2)').css({
+            'transform': 'scale(1)'
+        })
+    }
+    if ($(window).width() >= 768) {
+        if (winNearBottom > $('.ani_foot').offset().top) {
+            ani('.ani_foot');
+        }
+    }
 });
+
+if ($(window).width() < 768) {
+    $('.ani_foot').children().css({
+        'top': 0,
+        'left': 0,
+        'opacity': 1
+    });
+}
 
 $(document).ready(function () {
     ani('.ani_grids');
