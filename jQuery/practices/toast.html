@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="introduce">
+        <h1>仿Windows 10 通知</h1>
+        <button onclick="toast(message01)">message01</button>
+        <button onclick="toast(message02)">message02</button>
+        <button onclick="toast(message03)">message03</button>
+        <button onclick="toast(message04)">message04</button>
+    </div>
+
+    <div class="content"></div>
+
+    <style>
+        .introduce {
+            text-align: center;
+            padding-top: 200px;
+        }
+
+        .toast {
+            background: lightseagreen;
+            box-sizing: border-box;
+            user-select: none;
+            position: fixed;
+            right: -200px;
+            width: 200px;
+            height: 50px;
+            padding: 5px;
+        }
+
+        .toast img {
+            float: left;
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .toast .msg {
+            float: left;
+            margin-left: 5px;
+        }
+
+        .msg h5 {
+            margin: 0;
+            line-height: 20px;
+            font-size: 14px;
+        }
+
+        .msg p {
+            margin: 0;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        .msg p.close {
+            overflow: hidden;
+            transition: color .3s;
+            position: absolute;
+            top: 3px;
+            right: 10px;
+            font-size: 20px;
+            text-indent: -5px;
+        }
+
+        .msg p.close:hover {
+            color: #666;
+        }
+    </style>
+
+    <script>
+        var Toast = function (param) {
+            this.msg = param;
+
+            // 创建节点
+            this.node = $('<div class="toast"></div>');
+            this.node.css('bottom', $('.toast').length * 60 + 10);
+
+            if (this.msg.thumb) {
+                this.node.append('<img src="' + this.msg.thumb + '" />')
+            }
+            this.node.append('<div class="msg"><h5>' + this.msg.title + '</h5><p>' + this.msg.content +
+                '</p><p class="close">→</p>');
+            $('.content').append(this.node);
+
+            // 保存this
+            var _this = this;
+
+            // 10秒后 自动边缘隐藏+删除 上面的消息往下降
+            setTimeout(function () {
+                _this.node.animate({
+                    right: '-200'
+                }, function () {
+                    _this.node.nextAll().animate({
+                        bottom: '-=60'
+                    })
+                    _this.node.remove();
+                })
+            }, 10000);
+
+            this.node.click(function () {
+                var __this = $(this);
+                $(this).animate({}, function () {
+                    __this.css({
+                        'transition-duration': '.5s',
+                        'transform': 'skewX(-15deg) rotateX(30deg)',
+                        'opacity': 0.6
+                    });
+                    setTimeout(function () {
+                        __this.nextAll().animate({
+                        bottom: '-=60'
+                    })
+                        __this.remove();
+                    },500);
+                })
+            })
+
+            // 点击x 边缘隐藏+删除 上面的消息往下降
+            $(".close").click(function (e) {
+                // 阻止冒泡
+                e.stopPropagation();
+                var gran = $(this).parent().parent();
+                gran.animate({
+                    right: '-200'
+                }, function () {
+                    gran.nextAll().animate({
+                        bottom: '-=60'
+                    })
+                    gran.remove();
+                })
+            });
+
+            // 新生成的消息往外走
+            this.node.animate({
+                right: 0
+            })
+        }
+
+        function toast(param) {
+            new Toast(param);
+        }
+
+        var message01 = {
+            thumb: '',
+            title: '新消息01',
+            content: '新消息内容01'
+        }
+        var message02 = {
+            thumb: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3240227619,4271094976&fm=27&gp=0.jpg',
+            title: '新消息02',
+            content: '新消息内容02'
+        }
+        var message03 = {
+            thumb: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=774882013,660132957&fm=27&gp=0.jpg',
+            title: '新消息03',
+            content: '新消息内容03'
+        }
+        var message04 = {
+            title: '新消息04',
+            content: '新消息内容04'
+        }
+    </script>
+</body>
+
+</html>

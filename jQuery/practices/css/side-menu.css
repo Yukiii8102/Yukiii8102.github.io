@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.stage .shade {
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.1);
+  display: none;
+}
+.stage .text {
+  height: inherit;
+  text-align: center;
+  background: #f3eff0;
+  position: relative;
+  z-index: 2;
+  transition: all .5s;
+}
+.stage .text h1 {
+  font-size: 48px;
+  margin: 0;
+  padding: 50px;
+  color: lightseagreen;
+}
+.stage .text .buttonarea {
+  padding: 0 30px;
+  box-sizing: border-box;
+  border-right: 1px solid #999;
+}
+.stage .text .buttonarea button {
+  background: lightseagreen;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  color: #fff;
+  border-radius: 3px;
+}
+.stage .menu {
+  width: 250px;
+  height: 100%;
+  background: lightseagreen;
+  position: absolute;
+  top: 0;
+  left: -250px;
+  z-index: 3;
+}
+.stage .menu h1 {
+  text-align: center;
+}
+.stage .menu li {
+  list-style: none;
+  padding: 15px 0;
+  color: #fff;
+  text-indent: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all .5s;
+  cursor: pointer;
+}
+.stage .menu li:last-of-type {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.stage .menu li:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.stage #menu1 {
+  left: 0;
+  z-index: 1;
+}
+/*# sourceMappingURL=./side-menu.css.map */

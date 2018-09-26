@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/zoom.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <div class="stage">
+        <div class="image">
+            <div class="img_wrap">
+                <img class="img" src="./img/nick.jpg" alt="" width="250"/>
+                <span id="rect"></span>
+            </div>
+        </div>
+        <div class="menu"></div>
+        <div id="zoom"></div>
+    </div>
+
+    <script>
+        $('#rect').hide();
+        $('#zoom').hide();
+        $('.img_wrap img').mousemove(function(ev) {
+            var xx = ev.pageX - $(this).offset().left;
+            var yy = ev.pageY - $(this).offset().top;
+            var imgRight = parseFloat($('.img').attr('width'));
+            var imgBottom = parseFloat($('.img_wrap').css('padding-top')) + parseFloat($('.img').css('height'));
+            // console.log(xx +'--'+ yy);
+            $('#rect').show().css({
+                left: function() {
+                    if(xx < 50) {return 50;}
+                    else if (xx > imgRight - 50) {return imgRight - 50;}
+                    else {return xx};
+                },
+                top: function() {
+                    if (yy < 50) {return 50 + parseFloat($('.img_wrap').css('padding-top'));}
+                    else if (yy > parseFloat($('.img').css('height')) - 50) {return imgBottom - 50;}
+                    else {return yy + parseFloat($('.img_wrap').css('padding-top'))};
+                },
+                marginLeft: '-50px',
+                marginTop: '-50px'
+            });
+            var boxLeft = parseFloat($('#rect').css('left')) -50;
+            var boxTop = parseFloat($('#rect').css('top')) - parseFloat($('.img_wrap').css('padding-top')) -50;
+            $('#zoom').show().css({
+                'background-positionX': -boxLeft*2,
+                'background-positionY': -boxTop*2
+            })
+        })
+        $('.img_wrap img').mouseout(function() {
+            $('#rect').hide();
+            $('#zoom').hide();
+        })
+    </script>
+</body>
+</html>

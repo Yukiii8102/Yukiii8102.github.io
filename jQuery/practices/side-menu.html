@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/side-menu.css">
+</head>
+<body>
+    <div class="stage">
+        <div class="shade"></div>
+        <div class="text">
+            <h1>侧边栏转换</h1>
+            <div class="buttonarea">
+                <button id="reverse">REVERSE SLIDE OUT</button>
+                <button id="scale">SCALE DOWN PUSHER</button>
+            </div>
+        </div>
+        <div class="menu" id="menu1">
+            <h1>Sidebar</h1>
+            <li>Data Management</li>
+            <li>Location</li>
+            <li>Study</li>
+            <li>Collections</li>
+            <li>Credits</li>
+        </div>
+        <div class="menu" id="menu2">
+            <h1>Sidebar</h1>
+            <li>Data Management</li>
+            <li>Location</li>
+            <li>Study</li>
+            <li>Collections</li>
+            <li>Credits</li>
+        </div>
+    </div>
+
+    <script>
+        $('#menu1').hide();
+        $('#menu2').hide();
+        $('#reverse').click(function () {
+            $('.stage').animate({
+                left: '250px'
+            }).children('.shade').fadeIn(500).siblings('#menu1').show().delay(50).animate({
+                left: '-250px'
+            });
+        });
+        $('#scale').click(function () {
+            $('.text').animate({}, function() {
+                $('.text').css('transform','scale(0.5)');
+            }).siblings('.shade').fadeIn(500).siblings('#menu2').show().animate({
+                left: 0
+            });
+        });
+        $('.shade').click(function () {
+            $('.stage').animate({
+                left: 0
+            }).children('.shade').fadeOut(500).siblings('.text').animate({}, function () {
+                $('.text').css('transform', 'scale(1)')
+            }).siblings('#menu1').animate({
+                left: '100px'
+            }, function () {
+                $('#menu1').css('left', '0');
+            }).delay(0).hide(10).siblings('#menu2').animate({
+                left: '-250px'
+            }).hide(500);
+        })
+    </script>
+</body>
+</html>
