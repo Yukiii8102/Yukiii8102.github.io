@@ -17,9 +17,11 @@
     <button onclick="delcookie1()">删除cookie1</button>
     <button onclick="delcookie2()">删除cookie2</button>
 
+    <div id="demo"></div>
+
     <script>
         function getcookie() {
-            console.log(document.cookie);
+            document.getElementById('demo').innerHTML = "Cookie: " + document.cookie;
         }
         function addcookie1() {
             document.cookie = "key1 = value1";

@@ -19,7 +19,7 @@ svg, img, ttf实现图标 [icons](https://yukiii8102.github.io/svg/icons.html)
 小球斜向移动 触边反弹 按键变向 [ball-leaning](https://yukiii8102.github.io/javascript/keypress3-lean.html)  
 模拟抽奖转盘 [lottery](https://yukiii8102.github.io/javascript/lottery.html)  
 简陋选项卡 可关闭 [textcard1](https://yukiii8102.github.io/javascript/textcard1.html)  
-四色选项卡 [textcard2](https://yukiii8102.github.io/javascript/textcard2.html)
+四色选项卡 [textcard2](https://yukiii8102.github.io/javascript/textcard2.html)  
 Cookie练习 [cookie](https://yukiii8102.github.io/javascript/cookie.html)  
 Localstorage练习 [localstorage](https://yukiii8102.github.io/javascript/localstorage.html)  
 ## jQuery
