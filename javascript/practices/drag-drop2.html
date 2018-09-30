@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li class="item" value="1">列表项1</li>
+        <li class="item" value="2">列表项2</li>
+        <li class="item" value="3">列表项3</li>
+        <li class="item" value="4">列表项4</li>
+        <li class="item" value="5">列表项5</li>
+    </ul>
+
+    <style>
+        #list {
+            list-style: none;
+            width: 150px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid lightskyblue;
+        }
+
+        .item {
+            margin: 5px;
+            padding: 5px;
+            color: #fff;
+            background: lightseagreen;
+            border: 1px dashed transparent;
+            animation-duration: .5s;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+
+    <script>
+        var ulDiv = document.getElementById("list");
+        var items = document.querySelectorAll('#list .item');
+        var dragElement;
+
+        if (!localStorage.list) {
+            localStorage.list = JSON.stringify([]);
+            var tmp = [];
+            for (i = 0; i < items.length; i++) {
+                tmp.push(items[i].value);
+            }
+            localStorage.setItem('list', JSON.stringify(tmp));
+        }
+
+        for (var i = 0; i < items.length; i++) {
+            items[i].draggable = true;
+
+            items[i].ondragstart = function (e) {
+                // 保存this
+                dragElement = this;
+                dragElement.style.backgroundColor = 'lightgreen';
+            }
+
+            items[i].ondragenter = function (e) {
+                e.preventDefault();
+                this.style.border = '1px dashed red';
+            }
+
+            items[i].ondragleave = function (e) {
+                e.preventDefault();
+                this.style.border = '1px dashed transparent';
+            }
+
+            items[i].ondrop = function (e) {
+                ulDiv.insertBefore(dragElement, this);
+                this.style.border = '1px dashed transparent';
+                dragElement.style.animationName = 'scale';
+                dragElement.addEventListener("animationend", function () {
+                    dragElement.style.animationName = '';
+                    dragElement.style.backgroundColor = 'lightseagreen';
+                });
+                setTimeout(function () {
+                    var tmp = [];
+                    for (i = 0; i < items.length; i++) {
+                        tmp.push(items[i].value);
+                    }
+                    localStorage.setItem('list', JSON.stringify(tmp));
+                });
+            }
+        }
+
+        document.ondragover = function (e) {
+            e.preventDefault();
+        }
+    </script>
+</body>
+
+</html>

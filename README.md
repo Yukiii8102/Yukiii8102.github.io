@@ -28,6 +28,9 @@ svg, img, ttf实现图标 [icons](https://yukiii8102.github.io/svg/icons.html)
 四色选项卡 [textcard2](https://yukiii8102.github.io/javascript/practices/textcard2.html)  
 Cookie练习 [cookie](https://yukiii8102.github.io/javascript/practices/cookie.html)  
 Localstorage练习 [localstorage](https://yukiii8102.github.io/javascript/practices/localstorage.html)  
+来回拖放 [drag&drop1](https://yukiii8102.github.io/javascript/practices/drag-drop.html)  
+来回拖放2 localstorage/cookie保存待做  
+&emsp;&emsp;&emsp;&emsp; [drag&drop2](https://yukiii8102.github.io/javascript/practices/drag-drop2.html)
 ## jQuery
 轮播图 [slider](https://yukiii8102.github.io/jQuery/slider/slider.html)  
 

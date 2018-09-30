@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drag&Drop</title>
+</head>
+
+<body>
+    <div class="box" ondragover="dragover(event)" ondrop="drop(event)">
+        <img src="./images/home-v2016.png" alt="" id="pic" width="200" draggable="true" ondragstart="drag(event)">
+    </div>
+    <div class="box" ondragover="dragover(event)" ondrop="drop(event)"></div>
+
+    <style>
+        .box {
+            border: 1px solid red;
+            height: 200px;
+            padding: 20px;
+            width: 40%;
+            float: left;
+        }
+    </style>
+    <script>
+        function drag(event) {
+            // console.log(event.target.id);
+            event.dataTransfer.setData('Text', event.target.id);
+        }
+        function dragover(event) {
+            event.preventDefault();
+        }
+        function drop(event) {
+            event.preventDefault();
+            // console.log(event.target);
+            var data = event.dataTransfer.getData('Text');
+            event.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+
+</html>
