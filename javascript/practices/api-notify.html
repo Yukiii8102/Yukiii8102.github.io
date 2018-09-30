@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>通知&摄像头api</title>
+</head>
+
+<body>
+    <h1>通知&摄像头api</h1>
+    <button id="requestNotify">请求通知权限</button>
+    <button id="show">发送通知</button>
+    <button id="requestCamera">开启摄像头</button>
+    <br />
+    <video id="video" width="480" height="320" style="border: 1px solid darkgrey"></video>
+
+    <script>
+        if (window.Notification) {
+            console.log('支持通知api');
+        } else {
+            console.log('不支持通知api');
+        }
+        if (navigator.mediaDevices.getUserMedia) {
+            console.log('支持摄像头api');
+        } else {
+            console.log('不支持摄像头api');
+        }
+
+        document.getElementById("requestNotify").onclick = function () {
+            window.Notification.requestPermission();
+        }
+
+        // 调用摄像头
+        document.getElementById("requestCamera").onclick = function (event) {
+            event.stopPropagation();
+            function getUserMedia(constraints, success, error) {
+                navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
+            }
+            
+            if (navigator.mediaDevices.getUserMedia) {
+                getUserMedia({
+                    video: {
+                        width: 480,
+                        height: 320
+                    }
+                }, success, error);
+            }
+
+            function success(stream) {
+                //兼容webkit核心浏览器
+                let CompatibleURL = window.URL || window.webkitURL;
+                //将视频流设置为video元素的源
+                console.log(stream);
+
+                //video.src = CompatibleURL.createObjectURL(stream);
+                video.srcObject = stream;
+                video.play();
+            }
+
+            function error(error) {
+                console.log(`访问用户媒体设备失败${error.name}, ${error.message}`);
+            }
+        }
+
+        document.getElementById("show").onclick = function (ev) {
+            Notification.requestPermission(function (permission) {
+                if (permission == 'granted') {
+                    var noti = new Notification("通知测试", {
+                        dir: "auto",
+                        lang: 'zh-CN',
+                        body: '通知测试的内容',
+                        icon: './images/enemy-plane-m.png'
+                    });
+
+                    noti.onshow = function () {
+                        console.log('通知显示');
+                    }
+
+                    noti.onclick = function () {
+                        console.log('通知被点击');
+                    }
+
+                    noti.onclose = function () {
+                        console.log('通知关闭');
+                    }
+                } else if (permission == 'denied') {
+                    alert('没有权限');
+                }
+            })
+
+        }
+    </script>
+</body>
+
+</html>
