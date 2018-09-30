@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="stage">
+        <form class="searcharea">
+            <input type="text" />
+            <button>查询</button>
+        </form>
+        <div id="city"></div>
+        <div class="nowinfo"></div>
+        <div class="futureinfo"></div>
+    </div>
+    <style>
+        .stage {
+            overflow: hidden;
+        }
+
+        h5 {
+            margin-bottom: 0;
+        }
+
+        .item {
+            float: left;
+            height: 150px;
+            width: 100px;
+        }
+
+        .nowinfo {
+            float: left;
+        }
+
+        .futureinfo {
+            float: left;
+        }
+
+        .futureweather {
+            background: lightskyblue;
+        }
+
+        .sk {
+            background: lightseagreen;
+        }
+
+        .sktemp {
+            width: 84px;
+            margin: 0 auto;
+        }
+
+        p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        p.temp {
+            font-size: 36px;
+            font-weight: 600;
+            float: left;
+        }
+
+        p.centi {
+            font-weight: 500;
+            font-size: 14px;
+            padding-top: 5px;
+        }
+    </style>
+
+    <script>
+        var cityName;
+        var fuuture;
+        $('.stage>div').hide();
+        $('button').click(function (ev) {
+            ev.preventDefault();
+            var city = $('input').val();
+            cityName = city;
+            $.get("http://v.juhe.cn/weather/index", {
+                    cityname: city,
+                    key: '02f6ef86365a6b49f25f040468ef981a'
+                },
+                function (data, textStatus, jqXHR) {
+                    var sk = data.result.sk;
+                    var today = data.result.today;
+                    var future = data.result.future;
+                    fuuture = future;
+                    console.log(data.result.future);
+                    $('.stage>div').show().empty();
+                    $('#city').append('<h5>' + city + ' <span>' + today.date_y + ' ' + today.week +
+                        '</span></h5>');
+                    // today
+                    $('.nowinfo').append('<div class="item sk"><div class="sktemp"><p class="temp">' + sk.temp +
+                        '</p><p class="centi">℃<br />(实时)</p></div><p class="inform">' + today.temperature +
+                        '<br />' + today.weather + '<br />' + today.wind + '</p></div></div>');
+                    // future
+                    for (day in future) {
+                        $('.futureinfo').append('<div class="item futureweather"><p class="date">' +
+                            future[day].date.substring(4, 6) + '月' + future[day].date.substring(6, 8) +
+                            '日<br />' + future[day].week + '</p><p>' + future[day].temperature +
+                            '<br />' + future[day].weather + '<br />' + future[day].wind + '</p></div>'
+                        );
+                    }
+                    // 删除今日的
+                    $('.futureinfo').children().first().remove();
+                },
+                "jsonp"
+            );
+        })
+    </script>
+</body>
+
+</html>
