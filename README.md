@@ -30,7 +30,8 @@ Cookie练习 [cookie](https://yukiii8102.github.io/javascript/practices/cookie.h
 Localstorage练习 [localstorage](https://yukiii8102.github.io/javascript/practices/localstorage.html)  
 来回拖放 [drag&drop1](https://yukiii8102.github.io/javascript/practices/drag-drop.html)  
 来回拖放2 localstorage/cookie保存待做  
-&emsp;&emsp;&emsp;&emsp; [drag&drop2](https://yukiii8102.github.io/javascript/practices/drag-drop2.html)
+&emsp;&emsp;&emsp;&emsp; [drag&drop2](https://yukiii8102.github.io/javascript/practices/drag-drop2.html)  
+请求调用通知和摄像头的api [api-practice](https://yukiii8102.github.io/javascript/practices/api-notify.html)  
 ## jQuery
 轮播图 [slider](https://yukiii8102.github.io/jQuery/slider/slider.html)  
 
