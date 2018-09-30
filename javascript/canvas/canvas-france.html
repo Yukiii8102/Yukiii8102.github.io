@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas绘制法国国旗</title>
+</head>
+
+<body>
+    <h1>Canvas绘制法国国旗</h1>
+    <canvas id="canvas" width="400" height="400" style="border: 1px solid red; background: lightblue;"></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var cont = canvas.getContext('2d');
+        cont.fillStyle = 'blue';
+        cont.fillRect(50, 50, 50, 100);
+        cont.fillStyle = 'white';
+        cont.fillRect(100, 50, 50, 100);
+        cont.fillStyle = 'red';
+        cont.fillRect(150, 50, 50, 100);
+    </script>
+</body>
+
+</html>

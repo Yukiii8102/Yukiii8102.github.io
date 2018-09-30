@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas绘制安卓机器人</title>
+</head>
+<body>
+    <h1>Canvas绘制安卓机器人</h1>
+    <canvas id="canvas" width="300" height="300" style="border: 1px solid red;"></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext('2d');
+        
+        // 脑袋
+        ctx.beginPath();
+        ctx.arc(150, 125, 50, 0, Math.PI, true);
+        ctx.fillStyle = 'green';
+        ctx.fill();
+        ctx.closePath();
+
+        // 眼睛
+        ctx.beginPath();
+        ctx.arc(130, 100, 5, 0, Math.PI *2, false);
+        ctx.arc(170, 100, 5, 0, Math.PI *2, false);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+        ctx.closePath();
+
+        // 天线
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = 'green';
+        // left
+        ctx.moveTo(130, 80);
+        ctx.lineTo(115, 55);
+        // right
+        ctx.moveTo(170, 80);
+        ctx.lineTo(185, 55);
+        ctx.stroke();
+        ctx.closePath();
+        
+        // 身体和脚部
+        ctx.fillStyle = 'green';
+        ctx.beginPath();
+        ctx.fillRect(100, 130, 100, 70);
+        ctx.arc(110, 200, 10, 0, Math.PI *2, false);
+        ctx.arc(190, 200, 10, 0, Math.PI *2, false);
+        ctx.fill();
+        ctx.fillRect(110, 200, 80, 10);
+        ctx.closePath();
+        ctx.beginPath();
+        // left
+        ctx.fillRect(125, 200, 18, 40);
+        ctx.arc(134, 235, 10, 0, Math.PI *2, false);
+        ctx.fill();
+        // right
+        ctx.fillRect(162, 200, 18, 40);
+        ctx.arc(171, 235, 10, 0, Math.PI *2, false);
+        ctx.fill();
+        // clear for circle
+        ctx.clearRect(100, 210, 25, 50);
+        ctx.clearRect(143, 230, 19, 20);
+        ctx.clearRect(180, 210, 20, 50);
+        ctx.closePath();
+
+        // 手部
+        ctx.beginPath();
+        // left
+        ctx.fillRect(76, 135, 18, 50);
+        ctx.arc(85, 135, 9, 0, Math.PI*2, false);
+        ctx.arc(85, 185, 9, 0, Math.PI*2, false);
+        ctx.fill();
+        ctx.closePath();
+        // right
+        ctx.beginPath();
+        ctx.fillRect(206, 135, 18, 50);
+        ctx.arc(215, 135, 9, 0, Math.PI*2, false);
+        ctx.arc(215, 185, 9, 0, Math.PI*2, false);
+        ctx.fill();
+        ctx.closePath();
+    </script>
+</body>
+</html>

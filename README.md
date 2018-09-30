@@ -32,6 +32,10 @@ Localstorage练习 [localstorage](https://yukiii8102.github.io/javascript/practi
 来回拖放2 localstorage/cookie保存待做  
 &emsp;&emsp;&emsp;&emsp; [drag&drop2](https://yukiii8102.github.io/javascript/practices/drag-drop2.html)  
 请求调用通知和摄像头的api [api-practice](https://yukiii8102.github.io/javascript/practices/api-notify.html)  
+### canvas
+法国国旗 [nationflag](https://yukiii8102.github.io/javascript/canvas/canvas-france.html)  
+加载圆圈 [loading](https://yukiii8102.github.io/javascript/canvas/canvas-loading.html)  
+安卓机器人 [android](https://yukiii8102.github.io/javascript/canvas/canvas-android.html)  
 ## jQuery
 轮播图 [slider](https://yukiii8102.github.io/jQuery/slider/slider.html)  
 
