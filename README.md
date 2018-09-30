@@ -46,6 +46,7 @@ jQuery选项卡 [textcard3](https://yukiii8102.github.io/jQuery/practices/jQcard
 &emsp;&emsp;&emsp; [zoom2](https://yukiii8102.github.io/jQuery/practices/zoom1.html)  
 动画放大镜 [zoom3](https://yukiii8102.github.io/jQuery/practices/zoomclip.html)  
 侧边栏 [side-menu](https://yukiii8102.github.io/jQuery/practices/side-menu.html)  
+模拟星级评价 [star-rating](https://yukiii8102.github.io/jQuery/practices/rating)  
 ### ajax
 获取评论 [comment](https://yukiii8102.github.io/jQuery/ajax/ajax1.html)  
 获取图片 [picture](https://yukiii8102.github.io/jQuery/ajax/ajax2.html)  

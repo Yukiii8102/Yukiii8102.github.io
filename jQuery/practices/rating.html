@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <title>星级评价模拟</title>
+</head>
+
+<body>
+    <h1 style="text-indent: 100px;">星级评价模拟</h1>
+    <div class="stage" style="padding: 50px 0 0 100px;">
+        <p>点击星星提交评价</p>
+    </div>
+
+    <script>
+        for (i = 0; i < 10; i++) {
+            $('.stage').append('<img src="./img/nst.png" />')
+        }
+
+        $('img').hover(function () {
+            $(this).prevAll().addBack().attr("src", "./img/sth.png");
+        }, function () {
+            $(this).prevAll().addBack().attr("src", "./img/nst.png");
+        })
+
+        $('img').click(function () {
+            alert("This rating's value is " + $(this).index());
+        })
+    </script>
+</body>
+
+</html>
