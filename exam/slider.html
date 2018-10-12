@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="box">
+        <div id="imgs">
+            <img class="pic" src="./img/1.png" alt="">
+            <img class="pic" src="./img/2.png" alt="">
+            <img class="pic" src="./img/3.png" alt="">
+            <img class="pic" src="./img/4.png" alt="">
+        </div>
+        <div class="pages">
+            <span id="prev"><i class="fa fa-chevron-left fa-2x"></i></span>
+            <span id="next"><i class="fa fa-chevron-right fa-2x"></i></span>
+        </div>
+        <div id="pagination"></div>
+    </div>
+</body>
+<style>
+    #box {
+        position: relative;
+        width: 498px;
+        height: 220px;
+        overflow: hidden;
+    }
+
+    #imgs {
+        width: 1992px;
+        font-size: 0;
+    }
+
+    .pages {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        color: white;
+        text-shadow: 0 0 15px #000;
+    }
+
+    span {
+        display: inline-block;
+    }
+
+    span#prev {
+        float: left;
+    }
+
+    span#next {
+        float: right;
+    }
+
+    #pagination {
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        text-align: center;
+    }
+
+    b {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: #FFF;
+        margin: 0 8px;
+        transform: rotate(45deg);
+        box-shadow: 1px 1px 20px #000;
+    }
+    b.active {
+        background: lightseagreen;
+    }
+</style>
+<script>
+    var clickable = true;
+    var i = 0;
+    var num = 0;
+
+    $('.pic').each(() => {
+        $('#pagination').append('<b></b>');
+        $('b')[i].index = i;
+        i++;
+    })
+
+    $('#prev').on("click", () => {
+        if (clickable) {
+            clickable = !clickable;
+            num--;
+            if (num < 0) {
+                num = $('.pic').length - 1;
+            }
+            pageChange();
+            $('.pic:last').insertBefore($('.pic:first'));
+            $('#imgs').css({
+                'transition-duration': '0s',
+                'margin-left': '-498px'
+            });
+            setTimeout(() => {
+                $('#imgs').css({
+                    'transition-duration': '.5s',
+                    'margin-left': '0px'
+                });
+            })
+            setTimeout(() => {
+                clickable = !clickable;
+            }, 500);
+        }
+    })
+    $('#next').on("click", () => {
+        if (clickable) {
+            clickable = !clickable;
+            num++;
+            if (num > $('.pic').length - 1) {
+                num = 0;
+            }
+            pageChange();
+            $('#imgs').css({
+                'transition-duration': '.5s',
+                'margin-left': '-498px'
+            });
+            setTimeout(() => {
+                $('#imgs').css({
+                    'transition-duration': '0s',
+                    'margin-left': '0px'
+                });
+                $('.pic:first').insertAfter($('.pic:last'));
+                clickable = !clickable;
+            }, 500)
+        }
+    })
+    $('b').eq(0).addClass('active');
+    function pageChange() {
+        $('b').eq(num).addClass('active').siblings().removeClass('active');
+    }
+</script>
+
+</html>

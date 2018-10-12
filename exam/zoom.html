@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="stage">
+        <img src="./img/img-small.png" alt="" width="300">
+        <div class="block"></div>
+    </div>
+    <div class="zoom">
+        <img class="zooming" src="./img/img-big.png" alt="" width="1200">
+    </div>
+</body>
+<style>
+    .stage {
+        position: relative;
+    }
+    .block {
+        width: 50px;
+        height: 50px;
+        background: yellow;
+        opacity: .7;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        pointer-events: none;
+    }
+    .zoom {
+        position: absolute;
+        top: 8px;
+        left: 350px;
+        width: 200px;
+        height: 200px;
+        display: none;
+        overflow: hidden;
+    }
+    img {
+        position: relative;
+    }
+</style>
+<script>
+    var img = $('.stage img')
+    img.on("mouseenter mouseout",function (e) { 
+        // values: e.clientX, e.clientY, e.pageX, e.pageY
+        $('.block').toggle();
+        $('.zoom').toggle();
+    });
+    img.mousemove(function (e) { 
+        var blockLeft = e.offsetX -25;
+        var blockTop = e.offsetY -25;
+        if (blockLeft < 0) {
+            blockLeft = 0;
+        }
+        if (blockLeft +50 > img.width()) {
+            blockLeft = img.width() -50;
+        }
+        if (blockTop < 0) {
+            blockTop = 0;
+        }
+        if (blockTop +50 > img.height()) {
+            blockTop = img.height() -50;
+        }
+        $('.block').css({
+            'left': blockLeft,
+            'top': blockTop
+        })
+        $('.zooming').css({
+            'left': blockLeft*-4,
+            'top': blockTop*-4
+        })
+    });
+</script>
+</html>
